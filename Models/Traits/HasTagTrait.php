@@ -8,14 +8,14 @@ use Modules\Tag\Models\Tag;
 
 trait HasTagTrait {
     /**
-     * ---------- RELATIONSHIPS -----------------.
+     * ------------ RELATIONSHIPS -----------------.
      */
     public function tags() {
         return $this->morphToMany(Tag::class, 'post', 'tag_morph');
     }
 
     /**
-     * ---------- SCOPES ------------------------.
+     * ------------ SCOPES ------------------------.
      */
 
     /**
