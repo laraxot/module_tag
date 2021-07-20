@@ -59,7 +59,7 @@ class TagPanel extends XotBasePanel {
      * on select the option label.
      */
     public function optionLabel(object $row): string {
-        return $row->title;
+        return (string) $row->title;
     }
 
     /**
