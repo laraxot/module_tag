@@ -12,7 +12,7 @@ trait HasTagTrait {
         return $this->morphToMany(Tag::class, 'post', 'tag_morph');
     }
 
-    //----------- SCOPES ------------------------
+    //---------- SCOPES ------------------------
 
     /**
      * Undocumented function
