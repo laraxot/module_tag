@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-//use Laravel\Scout\Searchable;
-
 use Illuminate\Database\Eloquent\Model;
 use Modules\Blog\Models\Traits\LinkedTrait;
 use Modules\Xot\Contracts\ModelContract;
@@ -17,7 +15,6 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModelLang extends Model implements ModelContract {
     use Updater;
-    //use Searchable;
     use LinkedTrait;
     use HasFactory;
 
