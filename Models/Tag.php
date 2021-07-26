@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
+/**
+ * Undocumented class.
+ */
 class Tag extends BaseModelLang {
     protected $fillable = ['id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
     //protected $guard = ['id'];
