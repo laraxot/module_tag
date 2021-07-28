@@ -11,7 +11,13 @@ trait HasTagTrait {
      * ------------ RELATIONSHIPS -----------------.
      */
     public function tags() {
-        return $this->morphToMany(Tag::class, 'post', 'tag_morph');
+        $pivot = app(TagMorph::class);
+        $pivot_fields = $pivot->getFillable();
+
+        return $this->morphToMany(Tag::class, 'post', 'tag_morph')
+                    ->using($pivot)
+                    ->withPivot($pivot_fields)
+                    ->withTimestamps();
     }
 
     /**
