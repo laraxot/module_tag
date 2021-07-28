@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Traits;
 
 use Modules\Tag\Models\Tag;
+use Modules\Tag\Models\TagMorph;
 
 trait HasTagTrait {
     /**
