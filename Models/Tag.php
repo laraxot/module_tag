@@ -9,11 +9,8 @@ namespace Modules\Tag\Models;
  */
 class Tag extends BaseModelLang {
     protected $fillable = ['id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
+    //il campo old_id l'abbiamo usato per la conversione dal vecchio db di base_ew
     //protected $guard = ['id'];
-
-    public function treeLabel(): string {
-        return (string) optional($this->post)->title;
-    }
 
     public function tagCat() {
         return $this->belongsTo(TagCat::class);

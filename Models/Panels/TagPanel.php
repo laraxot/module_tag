@@ -158,6 +158,10 @@ class TagPanel extends XotBasePanel {
         return [];
     }
 
+    public function treeLabel(): string {
+        return (string) optional($this->row->post)->title;
+    }
+
     /**
      * Get the actions available for the resource.
      *
