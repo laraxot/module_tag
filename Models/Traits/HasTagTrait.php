@@ -21,6 +21,7 @@ trait HasTagTrait {
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) //Eager;
+            ;
     }
 
     /**
