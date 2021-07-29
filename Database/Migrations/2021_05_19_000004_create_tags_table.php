@@ -16,7 +16,7 @@ class CreateTagsTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table): void {
                     $table->increments('id');
-                    $table->string('tag_type');
+                    $table->text('tag_type');
                     $table->integer('tag_cat_id');
                     $table->timestamps();
                 }
@@ -30,14 +30,6 @@ class CreateTagsTable extends XotBaseMigration {
                     $table->string('updated_by')->nullable();
                 }
 
-                if (! $this->hasColumn('tag_type')) {
-                    $table->string('tag_type');
-                }
-
-                if (! $this->hasColumn('tag_cat_id')) {
-                    $table->integer('tag_cat_id');
-                }
-
                 if (! $this->hasColumn('old_id')) {
                     $table->integer('old_id');
                 }
@@ -47,11 +39,6 @@ class CreateTagsTable extends XotBaseMigration {
 
                 if (! $this->hasColumn('tag_cat_id_up')) {
                     $table->integer('tag_cat_id_up');
-                }
-
-                if (! $this->hasColumn('created_by')) {
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
                 }
             }
         );
