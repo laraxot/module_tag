@@ -16,6 +16,7 @@ class CreateTagsTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table): void {
                     $table->increments('id');
+                    $table->integer('parent_id');
                     $table->text('tag_type');
                     $table->integer('tag_cat_id');
                     $table->timestamps();
