@@ -53,6 +53,10 @@ class CreateTagsTable extends XotBaseMigration {
                     $table->string('created_by')->nullable();
                     $table->string('updated_by')->nullable();
                 }
+
+                if (! $this->hasColumn('parent_id')) {
+                    $table->integer('parent_id');
+                }
             }
         );
     }
