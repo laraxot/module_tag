@@ -38,7 +38,7 @@ class TagPanel extends XotBasePanel {
     }
 
     public function search(): array {
-        return [];
+        return ['post.title'];
     }
 
     /*
@@ -65,7 +65,7 @@ class TagPanel extends XotBasePanel {
     /**
      * index navigation.
      */
-    public function indexNav() {
+    public function indexNav():?array {
         return [];
     }
 
@@ -97,10 +97,11 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'Text',
                 'name' => 'tag_type',
-                'rules' => 'required',
+                //'rules' => 'required',
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
+
             (object) [
                 'type' => 'SelectRelationshipOne',
                 'name' => 'tagCat',
@@ -108,6 +109,7 @@ class TagPanel extends XotBasePanel {
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
+             
             (object) [
                 'type' => 'String',
                 'name' => 'post.title',
@@ -115,6 +117,21 @@ class TagPanel extends XotBasePanel {
                 'comment' => null,
                 'col_bs_size' => 12,
             ],
+
+            (object) [
+                'type' => 'SelectParent',
+                'name' => 'parent_id',
+                'comment' => null,
+                'col_bs_size' => 2,
+            ],
+
+            (object) [
+                'type' => 'Image',
+                'name' => 'post.image_src',
+                'comment' => null,
+                'col_bs_size' => 2,
+            ],
+
         ];
     }
 
