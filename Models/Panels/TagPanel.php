@@ -34,7 +34,7 @@ class TagPanel extends XotBasePanel {
      * @var array
      */
     public function with(): array {
-        return [];
+        return ['post'];
     }
 
     public function search(): array {
