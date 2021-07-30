@@ -45,7 +45,7 @@ abstract class BaseMorphPivot extends MorphPivot {
     protected $fillable = [
         'id',
         'post_id', 'post_type',
-        'related_type',
+        //'related_type',  //da pensarci
         'auth_user_id', //in amenity no, in rating si
         'note',
     ];

@@ -5,11 +5,9 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateTagCatsTable extends XotBaseMigration {
+class CreateTagsTable extends XotBaseMigration {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void {
         //-- CREATE --
@@ -18,10 +16,8 @@ class CreateTagCatsTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table): void {
                     $table->increments('id');
-                    $table->text('tag_cat_type'); //serve per filtrare
-                    $table->integer('type_input');
-                    //tipo di tag, per farlo visualizzare in una certa maniera o in un altra
-                    //da utilizzare in combinazione con il componente tag (forse ancora da fare)
+                    $table->string('tag_type');
+                    $table->integer('tag_cat_id');
                     $table->timestamps();
                 }
             );
@@ -34,12 +30,28 @@ class CreateTagCatsTable extends XotBaseMigration {
                     $table->string('updated_by')->nullable();
                 }
 
+                if (! $this->hasColumn('tag_type')) {
+                    $table->string('tag_type');
+                }
+
+                if (! $this->hasColumn('tag_cat_id')) {
+                    $table->integer('tag_cat_id');
+                }
+
                 if (! $this->hasColumn('old_id')) {
                     $table->integer('old_id');
                 }
-
                 if (! $this->hasColumn('pos')) {
                     $table->integer('pos');
+                }
+
+                if (! $this->hasColumn('tag_cat_id_up')) {
+                    $table->integer('tag_cat_id_up');
+                }
+
+                if (! $this->hasColumn('created_by')) {
+                    $table->string('created_by')->nullable();
+                    $table->string('updated_by')->nullable();
                 }
             }
         );

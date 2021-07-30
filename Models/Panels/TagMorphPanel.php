@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
@@ -9,14 +7,18 @@ use Illuminate\Http\Request;
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
-class TagPanel extends XotBasePanel {
+class TagMorphPanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
+     *
+     * @var string
      */
-    public static string $model = 'Modules\Tag\Models\Tag';
+    public static string $model = 'Modules\Tag\Models\TagMorph';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
+     *
+     * @var string
      */
     public static string $title = 'title';
 
@@ -25,41 +27,35 @@ class TagPanel extends XotBasePanel {
      *
      * @var array
      */
-    public static $search = [
-    ];
+    public static $search = array (
+);
 
     /**
      * The relationships that should be eager loaded on index queries.
      *
      * @var array
      */
-    public function with(): array {
-        return ['post'];
+    public function with():array {
+        return [];
     }
 
-    public function search(): array {
-        return ['post.title'];
+    public function search() :array {
+
+        return [];
     }
 
-    /*
-      * @param array|null $data
-      *
-      * @return mixed
-      */
-
-    public function options($data = null) {
-        if (null == $data) {
-            $data = request()->all();
-        }
-
-        return $this->rows($data)->where('tag_type', optional($this->getParent())->postType())->get();
+    /**
+     * on select the option id.
+     */
+    public function optionId(object $row) {
+        return $row->area_id;
     }
 
     /**
      * on select the option label.
      */
-    public function optionLabel(object $row): string {
-        return (string) $row->title;
+    public function optionLabel(object $row):string {
+        return $row->area_define_name;
     }
 
     /**
@@ -71,7 +67,6 @@ class TagPanel extends XotBasePanel {
 
     /**
      * Build an "index" query for the given resource.
-
      *
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
@@ -82,57 +77,51 @@ class TagPanel extends XotBasePanel {
         return $query;
     }
 
+
+
     /**
      * Get the fields displayed by the resource.
+     *
+     * @return array
+        'col_bs_size' => 6,
+        'sortable' => 1,
+        'rules' => 'required',
+        'rules_messages' => ['it'=>['required'=>'Nome Obbligatorio']],
         'value'=>'..',
      */
     public function fields(): array {
-        return [
-            (object) [
-                'type' => 'Id',
-                'name' => 'id',
-                'comment' => null,
-                'col_bs_size' => 2,
-            ],
-            (object) [
-                'type' => 'Text',
-                'name' => 'tag_type',
-                //'rules' => 'required',
-                'comment' => null,
-                'col_bs_size' => 5,
-            ],
-
-            (object) [
-                'type' => 'SelectRelationshipOne',
-                'name' => 'tagCat',
-                //'rules' => 'required',
-                'comment' => null,
-                'col_bs_size' => 5,
-            ],
-             
-            (object) [
-                'type' => 'String',
-                'name' => 'post.title',
-                'rules' => 'required',
-                'comment' => null,
-                'col_bs_size' => 12,
-            ],
-
-            (object) [
-                'type' => 'SelectParent',
-                'name' => 'parent_id',
-                'comment' => null,
-                'col_bs_size' => 2,
-            ],
-
-            (object) [
-                'type' => 'Image',
-                'name' => 'post.image_src',
-                'comment' => null,
-                'col_bs_size' => 2,
-            ],
-
-        ];
+        return array (
+  0 => 
+  (object) array(
+     'type' => 'Id',
+     'name' => 'id',
+     'comment' => NULL,
+  ),
+  1 => 
+  (object) array(
+     'type' => 'Bigint',
+     'name' => 'post_id',
+     'comment' => NULL,
+  ),
+  2 => 
+  (object) array(
+     'type' => 'String',
+     'name' => 'post_type',
+     'comment' => NULL,
+  ),
+  3 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'auth_user_id',
+     'comment' => NULL,
+  ),
+  4 => 
+  (object) array(
+     'type' => 'Text',
+     'name' => 'note',
+     'comment' => NULL,
+  ),
+);
     }
 
     /**
@@ -173,10 +162,6 @@ class TagPanel extends XotBasePanel {
      */
     public function lenses(Request $request) {
         return [];
-    }
-
-    public function treeLabel(): string {
-        return (string) optional($this->row->post)->title;
     }
 
     /**
