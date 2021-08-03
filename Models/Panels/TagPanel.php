@@ -97,7 +97,7 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'Text',
                 'name' => 'tag_type',
-                //'rules' => 'required',
+                'rules' => 'required',
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
@@ -105,7 +105,7 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'SelectRelationshipOne',
                 'name' => 'tagCat',
-                //'rules' => 'required',
+                'rules' => 'required',
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
