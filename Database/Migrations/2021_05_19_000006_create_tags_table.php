@@ -25,10 +25,7 @@ class CreateTagsTable extends XotBaseMigration {
         //-- UPDATE --
         $this->getConn()->table($this->getTable(),
             function (Blueprint $table): void {
-                if (! $this->hasColumn('created_by')) {
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
-                }
+                
 
                 if (! $this->hasColumn('tag_type')) {
                     $table->string('tag_type');
