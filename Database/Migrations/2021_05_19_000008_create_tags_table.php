@@ -23,10 +23,9 @@ class CreateTagsTable extends XotBaseMigration {
             );
         }
         //-- UPDATE --
-        $this->getConn()->table($this->getTable(),
+        $this->getConn()->table(
+            $this->getTable(),
             function (Blueprint $table): void {
-                
-
                 if (! $this->hasColumn('tag_type')) {
                     $table->string('tag_type');
                 }
