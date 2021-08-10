@@ -34,9 +34,9 @@ class Tag extends BaseModelLang
     public function productsInverse()
     {
 
-        dddx($this->belongsToMany(Product::class, 'tag_morph', 'post_id', 'id')->with('post')->get());
+        dddx($this->morphedByMany(Product::class, 'tag_morph', 'post_id', 'id')->with('post')->get());
 
-        return $this->belongsToMany(Product::class, 'tag_morph', 'post_id', 'id');
+        return $this->morphedByMany(Product::class, 'tag_morph', 'post_id', 'id');
     }
 
     public function products() {
