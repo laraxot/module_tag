@@ -31,30 +31,19 @@ class Tag extends BaseModelLang
         return $this->hasOne(Tag::class, 'parent_id', 'id');
     }
 
-    public function productsInverse()
+    public function products()
     {
 
-        dddx($this->morphedByMany(Product::class, 'tag_morph', 'post_id', 'id')->with('post')->get());
-
-        return $this->morphedByMany(Product::class, 'tag_morph', 'post_id', 'id');
-    }
-
-    public function products() {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
         $pivot_table = $pivot->getTable();
 
-        dddx($this->morphToMany(Product::class, 'post', 'tag_morph','post_id','id')
-        ->using($pivot)
-        ->withPivot($pivot_fields)
-        ->withTimestamps()
-        ->with(['post'])->get());
-
-        return $this->morphToMany(Product::class, 'post', 'tag_morph','post_id','id')
+        return $this->morphedByMany(Product::class, 'post', 'tag_morph')
             ->using($pivot)
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) //Eager;
             ;
+
     }
 }
