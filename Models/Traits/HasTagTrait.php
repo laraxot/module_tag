@@ -16,6 +16,13 @@ trait HasTagTrait {
         $pivot_fields = $pivot->getFillable();
         $pivot_table = $pivot->getTable();
 
+        dddx($this->morphToMany(Tag::class, 'post', 'tag_morph')
+        ->using($pivot)
+        ->withPivot($pivot_fields)
+        ->withTimestamps()
+        ->with(['post'])->get() //Eager;
+    );
+
         return $this->morphToMany(Tag::class, 'post', 'tag_morph')
             ->using($pivot)
             ->withPivot($pivot_fields)

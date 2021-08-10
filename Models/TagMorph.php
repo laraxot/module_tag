@@ -8,4 +8,6 @@ namespace Modules\Tag\Models;
  * Undocumented class.
  */
 class TagMorph extends BaseMorphPivot {
+
+
 }
