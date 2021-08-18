@@ -18,10 +18,8 @@ class CreateTagCatsTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table): void {
                     $table->increments('id');
-                    $table->text('tag_cat_type'); //serve per filtrare
+                    $table->text('tag_cat_type');
                     $table->integer('type_input');
-                    //tipo di tag, per farlo visualizzare in una certa maniera o in un altra
-                    //da utilizzare in combinazione con il componente tag (forse ancora da fare)
                     $table->timestamps();
                 }
             );
