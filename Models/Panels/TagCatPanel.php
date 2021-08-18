@@ -27,18 +27,20 @@ class TagCatPanel extends XotBasePanel {
      *
      * @var array
      */
-    public static array $search = [];
+    public static $search = array (
+);
 
     /**
      * The relationships that should be eager loaded on index queries.
      *
      * @var array
      */
-    public function with(): array {
+    public function with():array {
         return [];
     }
 
-    public function search(): array {
+    public function search() :array {
+
         return [];
     }
 
@@ -46,14 +48,14 @@ class TagCatPanel extends XotBasePanel {
      * on select the option id.
      */
     public function optionId(object $row) {
-        return $row->id;
+        return $row->area_id;
     }
 
     /**
      * on select the option label.
      */
-    public function optionLabel(object $row): string {
-        return $row->title;
+    public function optionLabel(object $row):string {
+        return $row->area_define_name;
     }
 
     /**
@@ -75,6 +77,8 @@ class TagCatPanel extends XotBasePanel {
         return $query;
     }
 
+
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -86,48 +90,42 @@ class TagCatPanel extends XotBasePanel {
         'value'=>'..',
      */
     public function fields(): array {
-        return [
-            (object) [
-                'type' => 'Id',
-                'name' => 'id',
-                'comment' => null,
-            ],
-            (object) [
-                'type' => 'String',
-                'name' => 'post.title',
-                'comment' => null,
-            ],
-            (object) [
-                'type' => 'String',
-                'name' => 'post.subtitle',
-                'comment' => null,
-            ],
-
-            (object) [
-                'type' => 'Text',
-                'name' => 'tag_cat_type',
-                //'rules' => 'required',
-                'comment' => null,
-            ],
-            (object) [
-                'type' => 'Integer',
-                'name' => 'type_input',
-                //'rules' => 'required',
-                'comment' => null,
-            ],
-            (object) [
-                'type' => 'Integer',
-                'name' => 'pos',
-                //'rules' => 'required',
-                'comment' => null,
-            ],
-            (object) [
-                'type' => 'Integer',
-                'name' => 'old_id',
-                //'rules' => 'required',
-                'comment' => null,
-            ],
-        ];
+        return array (
+  0 => 
+  (object) array(
+     'type' => 'Id',
+     'name' => 'id',
+     'comment' => NULL,
+  ),
+  1 => 
+  (object) array(
+     'type' => 'Text',
+     'name' => 'tag_cat_type',
+     'rules' => 'required',
+     'comment' => NULL,
+  ),
+  2 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'type_input',
+     'rules' => 'required',
+     'comment' => NULL,
+  ),
+  3 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'pos',
+     'rules' => 'required',
+     'comment' => NULL,
+  ),
+  4 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'old_id',
+     'rules' => 'required',
+     'comment' => NULL,
+  ),
+);
     }
 
     /**
@@ -136,7 +134,7 @@ class TagCatPanel extends XotBasePanel {
      * @return array
      */
     public function tabs() {
-        $tabs_name = ['tags'];
+        $tabs_name = [];
 
         return $tabs_name;
     }
@@ -177,9 +175,5 @@ class TagCatPanel extends XotBasePanel {
      */
     public function actions() {
         return [];
-    }
-
-    public function treeLabel(): string {
-        return (string) optional($this->row->post)->title;
     }
 }
