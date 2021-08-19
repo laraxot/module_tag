@@ -23,12 +23,17 @@ class Tag extends BaseModelLang {
         return $this->hasOne(Tag::class, 'parent_id', 'id');
     }
 
+    /*
+    public function items() {
+        return $this->morphTo('post');
+    }
+    */
     public function products() {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
         $pivot_table = $pivot->getTable();
 
-        return $this->morphedByMany(Product::class, 'post', 'tag_morph')
+        return $this->morphedByMany(\Modules\Shop\Models\Product::class, 'post', $pivot_table)
             ->using($pivot)
             ->withPivot($pivot_fields)
             ->withTimestamps()
