@@ -61,7 +61,7 @@ class TagCatPanel extends XotBasePanel {
     /**
      * index navigation.
      */
-    public function indexNav(): ?array {
+    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
         return [];
     }
 
@@ -91,34 +91,34 @@ class TagCatPanel extends XotBasePanel {
      */
     public function fields(): array {
         return array (
-  0 => 
+  0 =>
   (object) array(
      'type' => 'Id',
      'name' => 'id',
      'comment' => NULL,
   ),
-  1 => 
+  1 =>
   (object) array(
      'type' => 'Text',
      'name' => 'tag_cat_type',
      'rules' => 'required',
      'comment' => NULL,
   ),
-  2 => 
+  2 =>
   (object) array(
      'type' => 'Integer',
      'name' => 'type_input',
      'rules' => 'required',
      'comment' => NULL,
   ),
-  3 => 
+  3 =>
   (object) array(
      'type' => 'Integer',
      'name' => 'pos',
      'rules' => 'required',
      'comment' => NULL,
   ),
-  4 => 
+  4 =>
   (object) array(
      'type' => 'Integer',
      'name' => 'old_id',
