@@ -65,8 +65,8 @@ class TagPanel extends XotBasePanel {
     /**
      * index navigation.
      */
-    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return null;
+    public function indexNav():?array {
+        return [];
     }
 
     /**
@@ -109,7 +109,7 @@ class TagPanel extends XotBasePanel {
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
-
+             
             (object) [
                 'type' => 'String',
                 'name' => 'post.title',
@@ -131,6 +131,7 @@ class TagPanel extends XotBasePanel {
                 'comment' => null,
                 'col_bs_size' => 2,
             ],
+
         ];
     }
 
