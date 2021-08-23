@@ -61,7 +61,7 @@ class TagCatPanel extends XotBasePanel {
     /**
      * index navigation.
      */
-    public function indexNav(): \Illuminate\Contracts\Support\Renderable {
+    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
         return [];
     }
 
