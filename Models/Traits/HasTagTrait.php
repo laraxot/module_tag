@@ -5,13 +5,28 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Traits;
 
 use Modules\Tag\Models\Tag;
+use Modules\Tag\Models\TagMorph;
 
 trait HasTagTrait {
     /**
      * ------------ RELATIONSHIPS -----------------.
      */
     public function tags() {
-        return $this->morphToMany(Tag::class, 'post', 'tag_morph');
+        $pivot = app(TagMorph::class);
+        $pivot_fields = $pivot->getFillable();
+        $pivot_table = $pivot->getTable();
+
+        return $this->morphToMany(Tag::class, 'post', $pivot_table)
+            ->using($pivot)
+            ->withPivot($pivot_fields)
+            ->withTimestamps()
+            ->with(['post']) //Eager;
+            ;
+    }
+
+    //da fare
+    public function linkable() {
+        return $this->morphTo('post');
     }
 
     /**
