@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateTagCatsTable extends XotBaseMigration {
+class CreateTagsTable extends XotBaseMigration {
     /**
      * Run the migrations.
      */
@@ -16,8 +16,9 @@ class CreateTagCatsTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table): void {
                     $table->increments('id');
-                    $table->text('tag_cat_type');
-                    $table->integer('type_input');
+                    $table->integer('parent_id');
+                    $table->text('tag_type');
+                    $table->integer('tag_cat_id');
                     $table->timestamps();
                 }
             );
@@ -33,9 +34,12 @@ class CreateTagCatsTable extends XotBaseMigration {
                 if (! $this->hasColumn('old_id')) {
                     $table->integer('old_id');
                 }
-
                 if (! $this->hasColumn('pos')) {
                     $table->integer('pos');
+                }
+
+                if (! $this->hasColumn('tag_cat_id_up')) {
+                    $table->integer('tag_cat_id_up');
                 }
             }
         );
