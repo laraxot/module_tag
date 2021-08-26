@@ -30,7 +30,6 @@ abstract class BaseMorphPivot extends MorphPivot {
      */
     public $timestamps = true;
     //protected $attributes = ['related_type' => 'cuisine_cat'];
-
     /**
      * @var string[]
      */
@@ -40,14 +39,13 @@ abstract class BaseMorphPivot extends MorphPivot {
         'deleted_at',
         // 'published_at',
     ];
-
     /**
      * @var string[]
      */
     protected $fillable = [
         'id',
         'post_id', 'post_type',
-        //'related_type',  //da pensarci
+        'related_type',
         'auth_user_id', //in amenity no, in rating si
         'note',
     ];
