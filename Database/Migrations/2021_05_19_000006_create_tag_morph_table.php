@@ -30,6 +30,10 @@ class CreateTagMorphTable extends XotBaseMigration {
         }
         //-- UPDATE --
         $this->getConn()->table($this->getTable(), function (Blueprint $table) {
+            if (! $this->hasColumn('auth_user_id')) {
+                $table->integer('auth_user_id')->nullable();
+                $table->text('note')->nullable();
+            }
         }
         );
     }

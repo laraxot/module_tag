@@ -52,7 +52,7 @@ class TagPanel extends XotBasePanel {
             $data = request()->all();
         }
 
-        return $this->rows($data)->where('tag_type', $this->getParent()->postType())->get();
+        return $this->rows($data)->where('tag_type', optional($this->getParent())->postType())->get();
     }
 
     /**
@@ -63,21 +63,21 @@ class TagPanel extends XotBasePanel {
     }
 
     /**
-     * index navigation.
+     * @return null
      */
-    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return [];
+    public function indexNav(): ?array {
+        return null;
     }
 
     /**
      * Build an "index" query for the given resource.
+
      *
-     * @param Request                               $request
      * @param \Illuminate\Database\Eloquent\Builder $query
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public static function indexQuery($data, $query) {
+    public static function indexQuery(array $data, $query) {
         //return $query->where('auth_user_id', $request->user()->auth_user_id);
         return $query;
     }
@@ -97,7 +97,7 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'Text',
                 'name' => 'tag_type',
-                //'rules' => 'required',
+                'rules' => 'required',
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
@@ -105,7 +105,7 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'SelectRelationshipOne',
                 'name' => 'tagCat',
-                //'rules' => 'required',
+                'rules' => 'required',
                 'comment' => null,
                 'col_bs_size' => 5,
             ],
@@ -172,6 +172,10 @@ class TagPanel extends XotBasePanel {
      */
     public function lenses(Request $request) {
         return [];
+    }
+
+    public function treeLabel(): string {
+        return (string) optional($this->row->post)->title;
     }
 
     /**
