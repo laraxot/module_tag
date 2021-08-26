@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,6 @@
 |
 */
 
-Route::prefix('tag')->group(function() {
+Route::prefix('tag')->group(function () {
     Route::get('/', 'TagController@index');
 });

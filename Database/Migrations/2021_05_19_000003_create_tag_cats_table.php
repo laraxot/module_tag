@@ -8,8 +8,6 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
 class CreateTagCatsTable extends XotBaseMigration {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up(): void {
         //-- CREATE --
