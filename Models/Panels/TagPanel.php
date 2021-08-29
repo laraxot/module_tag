@@ -56,6 +56,13 @@ class TagPanel extends XotBasePanel {
     }
 
     /**
+     * on select the option id.
+     */
+    public function optionId(object $row) {
+        return $row->id;
+    }
+
+    /**
      * on select the option label.
      */
     public function optionLabel(object $row): string {
@@ -66,7 +73,7 @@ class TagPanel extends XotBasePanel {
      * index navigation.
      */
     public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return [];
+        return null;
     }
 
     /**
