@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Support\Renderable;
 //--- Services --
 
 use Modules\Xot\Models\Panels\XotBasePanel;
@@ -45,21 +46,21 @@ class TagMorphPanel extends XotBasePanel {
      * on select the option id.
      */
     public function optionId(object $row) {
-        return $row->area_id;
+        return $row->id;
     }
 
     /**
      * on select the option label.
      */
     public function optionLabel(object $row): string {
-        return $row->area_define_name;
+        return $row->title;
     }
 
     /**
-     * index navigation.
+     * @return null
      */
-    public function indexNav(): ?array {
-        return [];
+    public function indexNav(): ?Renderable {
+        return null;
     }
 
     /**
@@ -80,27 +81,27 @@ class TagMorphPanel extends XotBasePanel {
      */
     public function fields(): array {
         return [
-            0 => (object) [
+            (object) [
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
             ],
-            1 => (object) [
+            (object) [
                 'type' => 'Bigint',
                 'name' => 'post_id',
                 'comment' => null,
             ],
-            2 => (object) [
+            (object) [
                 'type' => 'String',
                 'name' => 'post_type',
                 'comment' => null,
             ],
-            3 => (object) [
+            (object) [
                 'type' => 'Integer',
                 'name' => 'auth_user_id',
                 'comment' => null,
             ],
-            4 => (object) [
+            (object) [
                 'type' => 'Text',
                 'name' => 'note',
                 'comment' => null,

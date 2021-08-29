@@ -45,21 +45,21 @@ class TagCatPanel extends XotBasePanel {
      * on select the option id.
      */
     public function optionId(object $row) {
-        return $row->area_id;
+        return $row->id;
     }
 
     /**
      * on select the option label.
      */
     public function optionLabel(object $row): string {
-        return $row->area_define_name;
+        return $row->title;
     }
 
     /**
      * index navigation.
      */
     public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return [];
+        return null;
     }
 
     /**
