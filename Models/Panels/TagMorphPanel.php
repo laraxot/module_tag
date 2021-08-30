@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models\Panels;
 
-use Illuminate\Http\Request;
 use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\Request;
 //--- Services --
 
 use Modules\Xot\Models\Panels\XotBasePanel;
