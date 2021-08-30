@@ -114,7 +114,7 @@ class TagMorphPanel extends XotBasePanel {
      *
      * @return array
      */
-    public function tabs() {
+    public function tabs():array {
         $tabs_name = [];
 
         return $tabs_name;
@@ -125,7 +125,7 @@ class TagMorphPanel extends XotBasePanel {
      *
      * @return array
      */
-    public function cards(Request $request) {
+    public function cards(Request $request):array {
         return [];
     }
 
@@ -136,7 +136,7 @@ class TagMorphPanel extends XotBasePanel {
      *
      * @return array
      */
-    public function filters(Request $request = null) {
+    public function filters(Request $request = null):array {
         return [];
     }
 
@@ -145,7 +145,7 @@ class TagMorphPanel extends XotBasePanel {
      *
      * @return array
      */
-    public function lenses(Request $request) {
+    public function lenses(Request $request):array {
         return [];
     }
 
@@ -154,7 +154,7 @@ class TagMorphPanel extends XotBasePanel {
      *
      * @return array
      */
-    public function actions() {
+    public function actions():array {
         return [];
     }
 }
