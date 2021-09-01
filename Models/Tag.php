@@ -24,6 +24,7 @@ class Tag extends BaseModelLang {
         return $this->hasOne(Tag::class, 'parent_id', 'id');
     }
 
+    //questa funzione non dovrebbe essere qui
     public function products() {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
