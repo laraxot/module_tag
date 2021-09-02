@@ -77,19 +77,6 @@ class TagPanel extends XotBasePanel {
     }
 
     /**
-     * Build an "index" query for the given resource.
-     *
-     * @param mixed                                 $data
-     * @param \Illuminate\Database\Eloquent\Builder $query
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public static function indexQuery($data, $query) {
-        //return $query->where('auth_user_id', $request->user()->auth_user_id);
-        return $query;
-    }
-
-    /**
      * Get the fields displayed by the resource.
         'value'=>'..',
      */
