@@ -41,13 +41,7 @@ class TagPanel extends XotBasePanel {
         return ['post.title'];
     }
 
-    /*
-      * @param array|null $data
-      *
-      * @return mixed
-      */
-
-    public function options($data = null) {
+    public function options($data = []) {
         if (null == $data) {
             $data = request()->all();
         }
