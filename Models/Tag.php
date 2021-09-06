@@ -31,7 +31,7 @@ class Tag extends BaseModelLang {
         $pivot_table = $pivot->getTable();
 
         return $this->morphedByMany(\Modules\Shop\Models\Product::class, 'post', $pivot_table)
-            ->using($pivot)
+            ->using(get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) //Eager;
