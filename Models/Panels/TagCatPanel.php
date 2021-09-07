@@ -68,30 +68,30 @@ class TagCatPanel extends XotBasePanel {
      */
     public function fields(): array {
         return [
-            0 => (object) [
+            (object) [
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
             ],
-            1 => (object) [
+            (object) [
                 'type' => 'Text',
                 'name' => 'tag_cat_type',
                 'rules' => 'required',
                 'comment' => null,
             ],
-            2 => (object) [
+            (object) [
                 'type' => 'Integer',
                 'name' => 'type_input',
                 'rules' => 'required',
                 'comment' => null,
             ],
-            3 => (object) [
+            (object) [
                 'type' => 'Integer',
                 'name' => 'pos',
                 'rules' => 'required',
                 'comment' => null,
             ],
-            4 => (object) [
+            (object) [
                 'type' => 'Integer',
                 'name' => 'old_id',
                 'rules' => 'required',
