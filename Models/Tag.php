@@ -6,6 +6,7 @@ namespace Modules\Tag\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Tag extends BaseModelLang {
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
@@ -25,7 +26,7 @@ class Tag extends BaseModelLang {
     }
 
     //questa funzione non dovrebbe essere qui
-    public function products() {
+    public function products(): MorphToMany {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
         $pivot_table = $pivot->getTable();

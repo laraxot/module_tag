@@ -46,7 +46,7 @@ class TagPanel extends XotBasePanel {
             $data = request()->all();
         }
 
-        return $this->rows($data)->where('tag_type', $this->getParent()->postType())->get();
+        return $this->rows($data)->where('tag_type', optional($this->getParent())->postType())->get();
     }
 
     /**
