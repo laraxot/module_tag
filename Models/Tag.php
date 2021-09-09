@@ -7,6 +7,7 @@ namespace Modules\Tag\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Modules\Xot\Services\TenantService;
 
 class Tag extends BaseModelLang {
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
@@ -30,8 +31,13 @@ class Tag extends BaseModelLang {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
         $pivot_table = $pivot->getTable();
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        //Class Modules\Shop\Models\Product was not found while trying to analyse it - discovering symbols is probably not configured properly.
+        // 💡 Learn more at https://phpstan.org/user-guide/discovering-symbols
+        $product = TenantService::model('product');
+        $product_class = get_class($product);
 
-        return $this->morphedByMany(\Modules\Shop\Models\Product::class, 'post', $pivot_table)
+        return $this->morphedByMany($product_class, 'post', $pivot_table)
             ->using(get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
