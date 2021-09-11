@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
+/**
+ * Modules\Tag\Models\TagMorph
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TagMorph query()
+ * @mixin \Eloquent
+ */
 class TagMorph extends BaseMorphPivot {
     /**
      * Attributes that should be mass-assignable.
