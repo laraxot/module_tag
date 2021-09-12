@@ -12,7 +12,8 @@ declare(strict_types=1);
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::prefix('tag')->group(function () {
     Route::get('/', 'TagController@index');
 });
+*/
