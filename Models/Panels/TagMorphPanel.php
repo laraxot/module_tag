@@ -75,7 +75,7 @@ class TagMorphPanel extends XotBasePanel {
                 'comment' => null,
             ],
             (object) [
-                'type' => 'Bigint',
+                'type' => 'Integer',
                 'name' => 'post_id',
                 'comment' => null,
             ],
