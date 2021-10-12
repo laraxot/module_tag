@@ -7,7 +7,7 @@ namespace Modules\Tag\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Modules\Xot\Services\TenantService;
+use Modules\Tenant\Services\TenantService;
 
 /**
  * Modules\Tag\Models\Tag
