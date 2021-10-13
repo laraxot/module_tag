@@ -10,24 +10,25 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Tenant\Services\TenantService;
 
 /**
- * Modules\Tag\Models\Tag
+ * Modules\Tag\Models\Tag.
  *
- * @property string|null $guid
- * @property string|null $image_src
- * @property-read string|null $lang
- * @property-read string|null $post_type
- * @property-read string|null $subtitle
- * @property-read string|null $title
- * @property string|null $txt
- * @property-read string|null $user_handle
- * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Xot\Models\Image[] $images
- * @property-read int|null $images_count
- * @property-read Tag|null $parent
- * @property-read \Modules\Blog\Models\Post|null $post
- * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Blog\Models\Post[] $posts
- * @property-read int|null $posts_count
- * @property-write mixed $url
- * @property-read \Modules\Tag\Models\TagCat $tagCat
+ * @property string|null                                                          $guid
+ * @property string|null                                                          $image_src
+ * @property string|null                                                          $lang
+ * @property string|null                                                          $post_type
+ * @property string|null                                                          $subtitle
+ * @property string|null                                                          $title
+ * @property string|null                                                          $txt
+ * @property string|null                                                          $user_handle
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Xot\Models\Image[] $images
+ * @property int|null                                                             $images_count
+ * @property Tag|null                                                             $parent
+ * @property \Modules\Blog\Models\Post|null                                       $post
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Blog\Models\Post[] $posts
+ * @property int|null                                                             $posts_count
+ * @property mixed                                                                $url
+ * @property \Modules\Tag\Models\TagCat                                           $tagCat
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -52,7 +53,7 @@ class Tag extends BaseModelLang {
         return $this->hasOne(Tag::class, 'parent_id', 'id');
     }
 
-    //questa funzione non dovrebbe essere qui
+    //questa funzione non dovrebbe essere qui, perchè non è generico
     public function products(): MorphToMany {
         $pivot = app(TagMorph::class);
         $pivot_fields = $pivot->getFillable();
