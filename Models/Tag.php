@@ -7,6 +7,7 @@ namespace Modules\Tag\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Modules\Blog\Models\Article;
 use Modules\Tenant\Services\TenantService;
 
 /**
@@ -70,5 +71,9 @@ class Tag extends BaseModelLang {
             ->withTimestamps()
             ->with(['post']) //Eager;
             ;
+    }
+
+    public function articles(): MorphToMany {
+        return $this->morphedByMany(Article::class, 'taggable');
     }
 }
