@@ -13,5 +13,5 @@ class CategoryMorph extends BaseMorphPivot {
      *
      * @var array
      */
-    protected $fillable = ['id', 'category_id', 'post_type', 'post_id', 'created_by', 'updated_by', 'auth_user_id', 'note'];
+    protected $fillable = ['id', 'category_id', 'post_type', 'post_id', 'created_by', 'updated_by', 'user_id', 'note'];
 }
