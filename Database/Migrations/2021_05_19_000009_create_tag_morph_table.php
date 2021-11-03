@@ -5,7 +5,7 @@ declare(strict_types=1);
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateCategoryMorphTable extends XotBaseMigration {
+class CreateTagMorphTable extends XotBaseMigration {
     /**
      * Run the migrations.
      *
@@ -18,11 +18,8 @@ class CreateCategoryMorphTable extends XotBaseMigration {
                 $this->getTable(),
                 function (Blueprint $table) {
                     $table->increments('id');
-                    $table->integer('category_id');
+                    $table->integer('tag_id');
                     $table->nullableMorphs('post');
-                    //li aggiungo, tanto male non fanno
-                    $table->integer('user_id')->nullable();
-                    $table->text('note')->nullable();
 
                     $table->timestamps();
 
@@ -33,12 +30,14 @@ class CreateCategoryMorphTable extends XotBaseMigration {
         }
         //-- UPDATE --
         $this->getConn()->table($this->getTable(), function (Blueprint $table) {
-            /*
-            if (! $this->hasColumn('user_id')) {
-                $table->integer('user_id')->nullable();
+            if (! $this->hasColumn('auth_user_id')) {
+                $table->integer('auth_user_id')->nullable();
                 $table->text('note')->nullable();
             }
-            */
+
+            if ($this->hasColumn('auth_user_id')) {
+                $table->renameColumn('auth_user_id', 'user_id');
+            }
         }
         );
     }
