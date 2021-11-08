@@ -21,7 +21,7 @@ class CreateCategoryMorphTable extends XotBaseMigration {
                     $table->integer('category_id');
                     $table->nullableMorphs('post');
                     //li aggiungo, tanto male non fanno
-                    $table->integer('auth_user_id')->nullable();
+                    $table->integer('user_id')->nullable();
                     $table->text('note')->nullable();
 
                     $table->timestamps();
@@ -34,11 +34,14 @@ class CreateCategoryMorphTable extends XotBaseMigration {
         //-- UPDATE --
         $this->getConn()->table($this->getTable(), function (Blueprint $table) {
             /*
-            if (! $this->hasColumn('auth_user_id')) {
-                $table->integer('auth_user_id')->nullable();
+            if (! $this->hasColumn('user_id')) {
+                $table->integer('user_id')->nullable();
                 $table->text('note')->nullable();
             }
             */
+            if ($this->hasColumn('auth_user_id')) {
+                $table->renameColumn('auth_user_id', 'user_id');
+            }
         }
         );
     }
