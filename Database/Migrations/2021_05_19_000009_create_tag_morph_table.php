@@ -34,6 +34,10 @@ class CreateTagMorphTable extends XotBaseMigration {
                 $table->integer('auth_user_id')->nullable();
                 $table->text('note')->nullable();
             }
+
+            if ($this->hasColumn('auth_user_id')) {
+                $table->renameColumn('auth_user_id', 'user_id');
+            }
         }
         );
     }
