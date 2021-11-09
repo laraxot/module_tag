@@ -73,7 +73,19 @@ class Tag extends BaseModelLang {
             ;
     }
 
+    /**
+     * Undocumented function.
+     */
     public function articles(): MorphToMany {
-        return $this->morphedByMany(Article::class, 'taggable');
+        $pivot = app(TagMorph::class);
+        $pivot_fields = $pivot->getFillable();
+        $pivot_table = $pivot->getTable();
+
+        return $this->morphedByMany(Article::class, 'post', $pivot_table)
+            ->using(get_class($pivot))
+            ->withPivot($pivot_fields)
+            ->withTimestamps()
+            ->with(['post']) //Eager;
+            ;
     }
 }
