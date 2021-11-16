@@ -3,9 +3,12 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
+use Modules\Tag\Models\Category;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateCategoriesTable extends XotBaseMigration {
+class CreateTagCategoriesTable extends XotBaseMigration {
+    protected ?string $model_class = Category::class;
+
     /**
      * Run the migrations.
      */
