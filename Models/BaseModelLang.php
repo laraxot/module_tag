@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Xot\Models\Traits\LinkedTrait;
 use Modules\Xot\Traits\Updater;
 
-/**
+/***
  * Class BaseModelLang.
  */
 abstract class BaseModelLang extends Model {
