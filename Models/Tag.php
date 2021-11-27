@@ -37,6 +37,8 @@ use Modules\Tenant\Services\TenantService;
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  * @mixin \Eloquent
  */
+
+ 
 class Tag extends BaseModelLang {
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
 
