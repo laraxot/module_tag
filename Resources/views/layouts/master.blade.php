@@ -12,7 +12,10 @@
     </head>
     <body>
         @yield('content')
+<<<<<<< HEAD
 
+=======
+>>>>>>> d9d576114de83fa27efb9efe0701ec3d4403c737
         {{-- Laravel Mix - JS File --}}
         {{-- <script src="{{ mix('js/tag.js') }}"></script> --}}
     </body>
