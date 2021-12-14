@@ -17,7 +17,7 @@ abstract class BaseModel extends Model {
     use Updater;
     //use Searchable;
     //use Cachable;
-
+    protected $connection = 'tag'; // this will use the specified database connection
     /**
      * @var string[]
      */
