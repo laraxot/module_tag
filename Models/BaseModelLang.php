@@ -16,6 +16,7 @@ abstract class BaseModelLang extends Model {
     use Updater;
     use LinkedTrait;
     use HasFactory;
+    protected $connection = 'tag'; // this will use the specified database connection
 
     /**
      * @var string[]
