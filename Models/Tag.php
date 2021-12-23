@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Modules\Blog\Models\Article;
-use Modules\Blog\Models\Traits\HasSlug;
 use Modules\Tenant\Services\TenantService;
+use Modules\Xot\Models\Traits\HasSlug;
 
 /**
  * Undocumented class.
