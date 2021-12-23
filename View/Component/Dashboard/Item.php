@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\FormX\View\Components\Dashboard;
+namespace Modules\Tag\View\Components\Dashboard;
 
 use Illuminate\View\Component;
 
