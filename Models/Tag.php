@@ -1,4 +1,7 @@
 <?php
+/**
+ * -- spatie
+ */
 
 declare(strict_types=1);
 
@@ -12,7 +15,7 @@ use Modules\Tenant\Services\TenantService;
 use Modules\Xot\Models\Traits\HasSlug;
 
 /**
- * Undocumented class.
+ * Tag class.
  */
 class Tag extends BaseModelLang {
     use HasSlug;
