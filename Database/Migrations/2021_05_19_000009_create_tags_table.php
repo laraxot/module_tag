@@ -21,7 +21,8 @@ class CreateTagsTable extends XotBaseMigration {
                     $table->timestamps();
                 }
             );
-        }
+
+
         //-- UPDATE --
         $this->getConn()->table(
             $this->getTable(),

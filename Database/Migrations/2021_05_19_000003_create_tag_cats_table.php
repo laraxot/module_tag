@@ -21,7 +21,8 @@ class CreateTagCatsTable extends XotBaseMigration {
                     $table->timestamps();
                 }
             );
-        }
+
+
         //-- UPDATE --
         $this->getConn()->table($this->getTable(),
             function (Blueprint $table): void {
