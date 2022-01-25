@@ -13,13 +13,12 @@ class CreateTagsTable extends XotBaseMigration {
         //-- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->string('tag_type');
-                    $table->integer('tag_cat_id');
-                    $table->timestamps();
-                }
-            );
-
+                $table->increments('id');
+                $table->string('tag_type');
+                $table->integer('tag_cat_id');
+                $table->timestamps();
+            }
+        );
 
         //-- UPDATE --
         $this->tableUpdate(
