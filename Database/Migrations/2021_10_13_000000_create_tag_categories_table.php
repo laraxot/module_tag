@@ -14,10 +14,8 @@ class CreateTagCategoriesTable extends XotBaseMigration {
      */
     public function up(): void {
         //-- CREATE --
-        if (! $this->tableExists()) {
-            $this->getConn()->create(
-                $this->getTable(),
-                function (Blueprint $table): void {
+        $this->tableCreate(
+            function (Blueprint $table) {
                     $table->increments('id');
                     $table->integer('parent_id');
                     $table->string('created_by')->nullable();
@@ -28,9 +26,8 @@ class CreateTagCategoriesTable extends XotBaseMigration {
 
 
         //-- UPDATE --
-        $this->getConn()->table(
-            $this->getTable(),
-            function (Blueprint $table): void {
+        $this->tableUpdate(
+            function (Blueprint $table) {
                 /*
                 if (! $this->hasColumn('tag_type')) {
                     $table->string('tag_type');

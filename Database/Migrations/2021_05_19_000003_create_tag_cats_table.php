@@ -11,10 +11,8 @@ class CreateTagCatsTable extends XotBaseMigration {
      */
     public function up(): void {
         //-- CREATE --
-        if (! $this->tableExists()) {
-            $this->getConn()->create(
-                $this->getTable(),
-                function (Blueprint $table): void {
+        $this->tableCreate(
+            function (Blueprint $table) {
                     $table->increments('id');
                     $table->text('tag_cat_type');
                     $table->integer('type_input');
