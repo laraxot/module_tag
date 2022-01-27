@@ -13,32 +13,34 @@ class CreateTagMorphTable extends XotBaseMigration {
      */
     public function up() {
         //-- CREATE --
-        if (! $this->tableExists()) {
-            $this->getConn()->create(
-                $this->getTable(),
-                function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->integer('tag_id');
-                    $table->nullableMorphs('post');
+        $this->tableCreate(
+            function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('tag_id');
+                $table->nullableMorphs('post');
 
-                    $table->timestamps();
+                $table->timestamps();
 
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
-                }
-            );
-        }
+                $table->string('created_by')->nullable();
+                $table->string('updated_by')->nullable();
+            }
+        );
+
         //-- UPDATE --
-        $this->getConn()->table($this->getTable(), function (Blueprint $table) {
-            if (! $this->hasColumn('auth_user_id')) {
-                $table->integer('auth_user_id')->nullable();
-                $table->text('note')->nullable();
-            }
+        $this->tableUpdate(
+            function (Blueprint $table) {
+                if (! $this->hasColumn('note')) {
+                    $table->text('note')->nullable();
+                }
 
-            if ($this->hasColumn('auth_user_id')) {
-                $table->renameColumn('auth_user_id', 'user_id');
+                if ($this->hasColumn('auth_user_id') && ! $this->hasColumn('user_id')) {
+                    $table->renameColumn('auth_user_id', 'user_id');
+                }
+
+                if (! $this->hasColumn('auth_user_id') && ! $this->hasColumn('user_id')) {
+                    $table->integer('user_id')->nullable();
+                }
             }
-        }
         );
     }
 }
