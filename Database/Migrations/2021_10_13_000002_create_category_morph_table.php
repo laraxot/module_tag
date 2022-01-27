@@ -13,10 +13,8 @@ class CreateCategoryMorphTable extends XotBaseMigration {
      */
     public function up() {
         //-- CREATE --
-        if (! $this->tableExists()) {
-            $this->getConn()->create(
-                $this->getTable(),
-                function (Blueprint $table) {
+        $this->tableCreate(
+            function (Blueprint $table) {
                     $table->increments('id');
                     $table->integer('category_id');
                     $table->nullableMorphs('post');
@@ -30,9 +28,11 @@ class CreateCategoryMorphTable extends XotBaseMigration {
                     $table->string('updated_by')->nullable();
                 }
             );
-        }
+
+
         //-- UPDATE --
-        $this->getConn()->table($this->getTable(), function (Blueprint $table) {
+        $this->tableUpdate(
+            function (Blueprint $table) {
             /*
             if (! $this->hasColumn('user_id')) {
                 $table->integer('user_id')->nullable();
