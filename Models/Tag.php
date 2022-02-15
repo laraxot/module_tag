@@ -16,6 +16,33 @@ use Modules\Xot\Models\Traits\HasSlug;
 
 /**
  * Tag class.
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection|Article[] $articles
+ * @property-read int|null $articles_count
+ * @property string|null $guid
+ * @property string|null $image_src
+ * @property-read string|null $lang
+ * @property-read string|null $post_type
+ * @property-read string|null $subtitle
+ * @property-read string|null $title
+ * @property string|null $txt
+ * @property-read string|null $user_handle
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Xot\Models\Image[] $images
+ * @property-read int|null $images_count
+ * @property-read Tag|null $parent
+ * @property-read \Modules\Lang\Models\Post|null $post
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
+ * @property-read int|null $posts_count
+ * @property-write mixed $slug
+ * @property-write mixed $url
+ * @property-read \Modules\Tag\Models\TagCat $tagCat
+ * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
+ * @method static \Illuminate\Database\Eloquent\Builder|Tag query()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
+ * @mixin \Eloquent
+ * @mixin IdeHelperTag
  */
 class Tag extends BaseModelLang {
     use HasSlug;

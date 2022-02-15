@@ -11,6 +11,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph query()
  * @mixin \Eloquent
+ * @mixin IdeHelperTagMorph
  */
 class TagMorph extends BaseMorphPivot {
     /**

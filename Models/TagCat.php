@@ -27,6 +27,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  * @mixin \Eloquent
+ * @mixin IdeHelperTagCat
  */
 class TagCat extends BaseModelLang {
     protected $fillable = ['id', 'tag_cat_type', 'type_input', 'pos', 'old_id'];
