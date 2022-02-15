@@ -6,6 +6,12 @@ namespace Modules\Tag\Models;
 
 /**
  * Modules\Tag\Models\CategoryMorph.
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph query()
+ * @mixin \Eloquent
+ * @mixin IdeHelperCategoryMorph
  */
 class CategoryMorph extends BaseMorphPivot {
     /*
