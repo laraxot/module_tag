@@ -30,8 +30,6 @@ class TagPanel extends XotBasePanel {
 
     /**
      * The relationships that should be eager loaded on index queries.
-     *
-     * @var array
      */
     public function with(): array {
         return ['post'];
@@ -42,7 +40,7 @@ class TagPanel extends XotBasePanel {
     }
 
     public function options($data = []) {
-        if (null == $data) {
+        if (null === $data) {
             $data = request()->all();
         }
 
