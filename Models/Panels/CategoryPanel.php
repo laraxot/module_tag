@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
@@ -32,8 +34,6 @@ class CategoryPanel extends XotBasePanel {
 
     /**
      * The relationships that should be eager loaded on index queries.
-     *
-     * @var array
      */
     public function with(): array {
         return ['post'];
