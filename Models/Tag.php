@@ -1,6 +1,6 @@
 <?php
 /**
- * -- spatie
+ * -- spatie.
  */
 
 declare(strict_types=1);
@@ -17,25 +17,25 @@ use Modules\Xot\Models\Traits\HasSlug;
 /**
  * Tag class.
  *
- * @property-read \Illuminate\Database\Eloquent\Collection|Article[] $articles
- * @property-read int|null $articles_count
- * @property string|null $guid
- * @property string|null $image_src
- * @property-read string|null $lang
- * @property-read string|null $post_type
- * @property-read string|null $subtitle
- * @property-read string|null $title
- * @property string|null $txt
- * @property-read string|null $user_handle
- * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Xot\Models\Image[] $images
- * @property-read int|null $images_count
- * @property-read Tag|null $parent
- * @property-read \Modules\Lang\Models\Post|null $post
- * @property-read \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
- * @property-read int|null $posts_count
- * @property-write mixed $slug
- * @property-write mixed $url
- * @property-read \Modules\Tag\Models\TagCat $tagCat
+ * @property \Illuminate\Database\Eloquent\Collection|Article[]                   $articles
+ * @property int|null                                                             $articles_count
+ * @property string|null                                                          $guid
+ * @property string|null                                                          $image_src
+ * @property string|null                                                          $lang
+ * @property string|null                                                          $post_type
+ * @property string|null                                                          $subtitle
+ * @property string|null                                                          $title
+ * @property string|null                                                          $txt
+ * @property string|null                                                          $user_handle
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Xot\Models\Image[] $images
+ * @property int|null                                                             $images_count
+ * @property Tag|null                                                             $parent
+ * @property \Modules\Lang\Models\Post|null                                       $post
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
+ * @property int|null                                                             $posts_count
+ * @property mixed                                                                $slug
+ * @property mixed                                                                $url
+ * @property \Modules\Tag\Models\TagCat                                           $tagCat
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -62,7 +62,7 @@ class Tag extends BaseModelLang {
     public function parent(): HasOne {
         return $this->hasOne(Tag::class, 'parent_id', 'id');
     }
-
+    /*
     //questa funzione non dovrebbe essere qui, perchè non è generico
     public function products(): MorphToMany {
         $pivot = app(TagMorph::class);
@@ -71,6 +71,9 @@ class Tag extends BaseModelLang {
         //---------------------------------------------------------------------------------------------------------------------------------------
         //Class Modules\Shop\Models\Product was not found while trying to analyse it - discovering symbols is probably not configured properly.
         // 💡 Learn more at https://phpstan.org/user-guide/discovering-symbols
+        //Error resolving relation model of Modules\Tag\Models\Tag:products() : model unknown [product]
+        //[line:255][TenantService.php]
+
         $product = TenantService::model('product');
         $product_class = get_class($product);
 
@@ -81,6 +84,7 @@ class Tag extends BaseModelLang {
             ->with(['post']) //Eager;
             ;
     }
+    */
 
     /**
      * Undocumented function.
