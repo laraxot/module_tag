@@ -80,14 +80,14 @@ class TagPanel extends XotBasePanel {
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
-                'col_bs_size' => 2,
+                'col_size' => 2,
             ],
             (object) [
                 'type' => 'Text',
                 'name' => 'tag_type',
                 //'rules' => 'required',
                 'comment' => null,
-                'col_bs_size' => 5,
+                'col_size' => 5,
             ],
 
             (object) [
@@ -95,7 +95,7 @@ class TagPanel extends XotBasePanel {
                 'name' => 'tagCat',
                 //'rules' => 'required',
                 'comment' => null,
-                'col_bs_size' => 5,
+                'col_size' => 5,
             ],
 
             (object) [
@@ -103,21 +103,21 @@ class TagPanel extends XotBasePanel {
                 'name' => 'post.title',
                 'rules' => 'required',
                 'comment' => null,
-                'col_bs_size' => 12,
+                'col_size' => 12,
             ],
 
             (object) [
                 'type' => 'SelectParent',
                 'name' => 'parent_id',
                 'comment' => null,
-                'col_bs_size' => 2,
+                'col_size' => 2,
             ],
 
             (object) [
                 'type' => 'Image',
                 'name' => 'post.image_src',
                 'comment' => null,
-                'col_bs_size' => 2,
+                'col_size' => 2,
             ],
         ];
     }
