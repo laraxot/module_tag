@@ -42,3 +42,4 @@ Homestead.json
 .git-rewrite
 
 *.lock
+*.cache
