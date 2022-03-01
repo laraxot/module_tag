@@ -3,7 +3,9 @@
     "alias": "tag",
     "description": "",
     "keywords": [],
-    "priority": 0,
+    "priority": 10,
+    "active": 1,
+    "order": 10,
     "providers": [
         "Modules\\Tag\\Providers\\TagServiceProvider"
     ],
