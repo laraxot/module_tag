@@ -22,8 +22,8 @@ class CreateTagCatsTable extends XotBaseMigration {
 
 
         //-- UPDATE --
-        $this->getConn()->table($this->getTable(),
-            function (Blueprint $table): void {
+        $this->tableUpdate(
+            function (Blueprint $table) {
                 if (! $this->hasColumn('created_by')) {
                     $table->string('created_by')->nullable();
                     $table->string('updated_by')->nullable();
