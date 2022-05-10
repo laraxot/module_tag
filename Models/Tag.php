@@ -36,7 +36,10 @@ use Modules\Xot\Models\Traits\HasSlug;
  * @property mixed                                                                $slug
  * @property mixed                                                                $url
  * @property \Modules\Tag\Models\TagCat                                           $tagCat
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 160a6ab (first)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -50,7 +53,11 @@ class Tag extends BaseModelLang {
 
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
 
+<<<<<<< HEAD
     // protected $guard = ['id'];
+=======
+    //protected $guard = ['id'];
+>>>>>>> 160a6ab (first)
 
     public function treeLabel(): string {
         return (string) optional($this->post)->title;
@@ -61,7 +68,11 @@ class Tag extends BaseModelLang {
     }
 
     public function parent(): HasOne {
+<<<<<<< HEAD
         return $this->hasOne(self::class, 'parent_id', 'id');
+=======
+        return $this->hasOne(Tag::class, 'parent_id', 'id');
+>>>>>>> 160a6ab (first)
     }
     /*
     //questa funzione non dovrebbe essere qui, perchè non è generico
@@ -96,10 +107,17 @@ class Tag extends BaseModelLang {
         $pivot_table = $pivot->getTable();
 
         return $this->morphedByMany(Article::class, 'post', $pivot_table)
+<<<<<<< HEAD
             ->using(\get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) // Eager;
+=======
+            ->using(get_class($pivot))
+            ->withPivot($pivot_fields)
+            ->withTimestamps()
+            ->with(['post']) //Eager;
+>>>>>>> 160a6ab (first)
             ;
     }
 }

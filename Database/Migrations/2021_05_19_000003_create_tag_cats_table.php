@@ -10,6 +10,7 @@ class CreateTagCatsTable extends XotBaseMigration {
      * Run the migrations.
      */
     public function up(): void {
+<<<<<<< HEAD
         // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
@@ -21,6 +22,20 @@ class CreateTagCatsTable extends XotBaseMigration {
             );
 
         // -- UPDATE --
+=======
+        //-- CREATE --
+        $this->tableCreate(
+            function (Blueprint $table) {
+                    $table->increments('id');
+                    $table->text('tag_cat_type');
+                    $table->integer('type_input');
+                    $table->timestamps();
+                }
+            );
+
+
+        //-- UPDATE --
+>>>>>>> 160a6ab (first)
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('created_by')) {
@@ -38,4 +53,8 @@ class CreateTagCatsTable extends XotBaseMigration {
             }
         );
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 160a6ab (first)

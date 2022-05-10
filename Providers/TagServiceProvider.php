@@ -12,4 +12,8 @@ class TagServiceProvider extends XotBaseServiceProvider {
     protected string $module_ns = __NAMESPACE__;
 
     public string $module_name = 'tag';
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 160a6ab (first)

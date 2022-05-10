@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 // --- Services --
+=======
+//--- Services --
+>>>>>>> 160a6ab (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 

@@ -13,6 +13,7 @@ class CreateTagCategoriesTable extends XotBaseMigration {
      * Run the migrations.
      */
     public function up(): void {
+<<<<<<< HEAD
         // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
@@ -25,6 +26,21 @@ class CreateTagCategoriesTable extends XotBaseMigration {
             );
 
         // -- UPDATE --
+=======
+        //-- CREATE --
+        $this->tableCreate(
+            function (Blueprint $table) {
+                    $table->increments('id');
+                    $table->integer('parent_id');
+                    $table->string('created_by')->nullable();
+                    $table->string('updated_by')->nullable();
+                    $table->timestamps();
+                }
+            );
+
+
+        //-- UPDATE --
+>>>>>>> 160a6ab (first)
         $this->tableUpdate(
             function (Blueprint $table) {
                 /*
