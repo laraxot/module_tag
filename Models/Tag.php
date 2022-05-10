@@ -36,6 +36,7 @@ use Modules\Xot\Models\Traits\HasSlug;
  * @property mixed                                                                $slug
  * @property mixed                                                                $url
  * @property \Modules\Tag\Models\TagCat                                           $tagCat
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -49,7 +50,7 @@ class Tag extends BaseModelLang {
 
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
 
-    //protected $guard = ['id'];
+    // protected $guard = ['id'];
 
     public function treeLabel(): string {
         return (string) optional($this->post)->title;
@@ -60,7 +61,7 @@ class Tag extends BaseModelLang {
     }
 
     public function parent(): HasOne {
-        return $this->hasOne(Tag::class, 'parent_id', 'id');
+        return $this->hasOne(self::class, 'parent_id', 'id');
     }
     /*
     //questa funzione non dovrebbe essere qui, perchè non è generico
@@ -95,10 +96,10 @@ class Tag extends BaseModelLang {
         $pivot_table = $pivot->getTable();
 
         return $this->morphedByMany(Article::class, 'post', $pivot_table)
-            ->using(get_class($pivot))
+            ->using(\get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
-            ->with(['post']) //Eager;
+            ->with(['post']) // Eager;
             ;
     }
 }

@@ -13,19 +13,18 @@ class CreateTagCategoriesTable extends XotBaseMigration {
      * Run the migrations.
      */
     public function up(): void {
-        //-- CREATE --
+        // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->integer('parent_id');
-                    $table->string('created_by')->nullable();
-                    $table->string('updated_by')->nullable();
-                    $table->timestamps();
-                }
+                $table->increments('id');
+                $table->integer('parent_id');
+                $table->string('created_by')->nullable();
+                $table->string('updated_by')->nullable();
+                $table->timestamps();
+            }
             );
 
-
-        //-- UPDATE --
+        // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table) {
                 /*
