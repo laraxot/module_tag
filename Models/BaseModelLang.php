@@ -14,6 +14,7 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModelLang extends Model {
 <<<<<<< HEAD
+<<<<<<< HEAD
     use HasFactory;
     use LinkedTrait;
     use Updater;
@@ -22,6 +23,11 @@ abstract class BaseModelLang extends Model {
     use LinkedTrait;
     use HasFactory;
 >>>>>>> 160a6ab (first)
+=======
+    use Updater;
+    use LinkedTrait;
+    use HasFactory;
+>>>>>>> fc24fbf (first)
     protected $connection = 'tag'; // this will use the specified database connection
 
     /**
@@ -34,10 +40,14 @@ abstract class BaseModelLang extends Model {
      */
     protected $casts = [
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 'published_at' => 'datetime:Y-m-d', // da verificare
 =======
         //'published_at' => 'datetime:Y-m-d', // da verificare
 >>>>>>> 160a6ab (first)
+=======
+        //'published_at' => 'datetime:Y-m-d', // da verificare
+>>>>>>> fc24fbf (first)
     ];
 
     /**
@@ -60,10 +70,14 @@ abstract class BaseModelLang extends Model {
      */
     protected $hidden = [
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 'password'
 =======
         //'password'
 >>>>>>> 160a6ab (first)
+=======
+        //'password'
+>>>>>>> fc24fbf (first)
     ];
 
     /**
@@ -72,10 +86,14 @@ abstract class BaseModelLang extends Model {
     public $timestamps = true;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // -----------
 =======
     //-----------
 >>>>>>> 160a6ab (first)
+=======
+    //-----------
+>>>>>>> fc24fbf (first)
     /*
     protected $id;
     protected $post;

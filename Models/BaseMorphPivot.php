@@ -32,10 +32,14 @@ abstract class BaseMorphPivot extends MorphPivot {
      */
     public $timestamps = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
     // protected $attributes = ['related_type' => 'cuisine_cat'];
 =======
     //protected $attributes = ['related_type' => 'cuisine_cat'];
 >>>>>>> 160a6ab (first)
+=======
+    //protected $attributes = ['related_type' => 'cuisine_cat'];
+>>>>>>> fc24fbf (first)
     /**
      * @var string[]
      */
@@ -56,7 +60,11 @@ abstract class BaseMorphPivot extends MorphPivot {
         'note',
     ];
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 160a6ab (first)
+=======
+}
+>>>>>>> fc24fbf (first)

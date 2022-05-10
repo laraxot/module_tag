@@ -6,10 +6,14 @@ namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 // --- Services --
 =======
 //--- Services --
 >>>>>>> 160a6ab (first)
+=======
+//--- Services --
+>>>>>>> fc24fbf (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
@@ -88,10 +92,14 @@ class TagPanel extends XotBasePanel {
                 'type' => 'Text',
                 'name' => 'tag_type',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // 'rules' => 'required',
 =======
                 //'rules' => 'required',
 >>>>>>> 160a6ab (first)
+=======
+                //'rules' => 'required',
+>>>>>>> fc24fbf (first)
                 'comment' => null,
                 'col_size' => 5,
             ],
@@ -100,10 +108,14 @@ class TagPanel extends XotBasePanel {
                 'type' => 'SelectRelationshipOne',
                 'name' => 'tagCat',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // 'rules' => 'required',
 =======
                 //'rules' => 'required',
 >>>>>>> 160a6ab (first)
+=======
+                //'rules' => 'required',
+>>>>>>> fc24fbf (first)
                 'comment' => null,
                 'col_size' => 5,
             ],

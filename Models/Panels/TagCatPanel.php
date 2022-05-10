@@ -6,10 +6,14 @@ namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 // --- Services --
 =======
 //--- Services --
 >>>>>>> 160a6ab (first)
+=======
+//--- Services --
+>>>>>>> fc24fbf (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 

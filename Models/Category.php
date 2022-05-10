@@ -22,9 +22,12 @@ namespace Modules\Tag\Models;
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
 =======
 >>>>>>> 160a6ab (first)
+=======
+>>>>>>> fc24fbf (first)
  * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -42,15 +45,22 @@ class Category extends BaseModelLang {
      *
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
     // public function shops() {
         // Class Modules\Tag\Models\Shop not found.
     //    return $this->morphRelated(Shop::class, true);
     // }
 }
 =======
+=======
+>>>>>>> fc24fbf (first)
     //public function shops() {
         //Class Modules\Tag\Models\Shop not found.
     //    return $this->morphRelated(Shop::class, true);
     //}
+<<<<<<< HEAD
 }
 >>>>>>> 160a6ab (first)
+=======
+}
+>>>>>>> fc24fbf (first)

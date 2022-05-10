@@ -13,6 +13,7 @@ class CreateCategoryMorphTable extends XotBaseMigration {
      */
     public function up() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
@@ -44,6 +45,8 @@ class CreateCategoryMorphTable extends XotBaseMigration {
                 }
             }
 =======
+=======
+>>>>>>> fc24fbf (first)
         //-- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
@@ -75,7 +78,10 @@ class CreateCategoryMorphTable extends XotBaseMigration {
                 $table->renameColumn('auth_user_id', 'user_id');
             }
         }
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
+=======
+>>>>>>> fc24fbf (first)
         );
     }
 }

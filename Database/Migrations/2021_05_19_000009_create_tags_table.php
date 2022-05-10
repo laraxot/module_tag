@@ -11,10 +11,14 @@ class CreateTagsTable extends XotBaseMigration {
      */
     public function up(): void {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // -- CREATE --
 =======
         //-- CREATE --
 >>>>>>> 160a6ab (first)
+=======
+        //-- CREATE --
+>>>>>>> fc24fbf (first)
         $this->tableCreate(
             function (Blueprint $table) {
                 $table->increments('id');
@@ -25,10 +29,14 @@ class CreateTagsTable extends XotBaseMigration {
         );
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // -- UPDATE --
 =======
         //-- UPDATE --
 >>>>>>> 160a6ab (first)
+=======
+        //-- UPDATE --
+>>>>>>> fc24fbf (first)
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('tag_type')) {
@@ -62,7 +70,11 @@ class CreateTagsTable extends XotBaseMigration {
         );
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 160a6ab (first)
+=======
+}
+>>>>>>> fc24fbf (first)
