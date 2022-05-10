@@ -12,19 +12,7 @@ class CreateTagMorphTable extends XotBaseMigration {
      * @return void
      */
     public function up() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         // -- CREATE --
-=======
-        //-- CREATE --
->>>>>>> 160a6ab (first)
-=======
-        //-- CREATE --
->>>>>>> fc24fbf (first)
-=======
-        //-- CREATE --
->>>>>>> 4fabb56 (first)
         $this->tableCreate(
             function (Blueprint $table) {
                 $table->increments('id');
@@ -38,19 +26,7 @@ class CreateTagMorphTable extends XotBaseMigration {
             }
         );
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         // -- UPDATE --
-=======
-        //-- UPDATE --
->>>>>>> 160a6ab (first)
-=======
-        //-- UPDATE --
->>>>>>> fc24fbf (first)
-=======
-        //-- UPDATE --
->>>>>>> 4fabb56 (first)
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('note')) {
@@ -67,16 +43,4 @@ class CreateTagMorphTable extends XotBaseMigration {
             }
         );
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 160a6ab (first)
-=======
-}
->>>>>>> fc24fbf (first)
-=======
-}
->>>>>>> 4fabb56 (first)
