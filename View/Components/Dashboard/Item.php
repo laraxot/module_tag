@@ -6,7 +6,7 @@ namespace Modules\Tag\View\Components\Dashboard;
 
 use Illuminate\View\Component;
 
-//use Modules\Xot\View\Components\XotBaseComponent;
+// use Modules\Xot\View\Components\XotBaseComponent;
 
 /**
  * Class Field.

@@ -13,9 +13,9 @@ use Modules\Xot\Traits\Updater;
  * Class BaseModelLang.
  */
 abstract class BaseModelLang extends Model {
-    use Updater;
-    use LinkedTrait;
     use HasFactory;
+    use LinkedTrait;
+    use Updater;
     protected $connection = 'tag'; // this will use the specified database connection
 
     /**
@@ -27,7 +27,7 @@ abstract class BaseModelLang extends Model {
      * @var array
      */
     protected $casts = [
-        //'published_at' => 'datetime:Y-m-d', // da verificare
+        // 'published_at' => 'datetime:Y-m-d', // da verificare
     ];
 
     /**
@@ -49,7 +49,7 @@ abstract class BaseModelLang extends Model {
      * @var array
      */
     protected $hidden = [
-        //'password'
+        // 'password'
     ];
 
     /**
@@ -57,7 +57,7 @@ abstract class BaseModelLang extends Model {
      */
     public $timestamps = true;
 
-    //-----------
+    // -----------
     /*
     protected $id;
     protected $post;
