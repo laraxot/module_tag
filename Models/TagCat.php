@@ -22,9 +22,12 @@ namespace Modules\Tag\Models;
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
 <<<<<<< HEAD
+<<<<<<< HEAD
  *
 =======
 >>>>>>> 4fabb56 (first)
+=======
+>>>>>>> 7caab11 (up)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)

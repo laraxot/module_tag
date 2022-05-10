@@ -8,6 +8,7 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -139,9 +140,14 @@ class Tag extends BaseModelLang {
             ;
     }
 =======
+=======
+>>>>>>> 7caab11 (up)
 use Spatie\Tags\Tag as BaseTag;
 
 class Tag extends BaseTag {
     protected $connection = 'tag'; // this will use the specified database connection
+<<<<<<< HEAD
 >>>>>>> 4fabb56 (first)
+=======
+>>>>>>> 7caab11 (up)
 }
