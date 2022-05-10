@@ -7,8 +7,6 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
@@ -38,13 +36,7 @@ use Modules\Xot\Models\Traits\HasSlug;
  * @property mixed                                                                $slug
  * @property mixed                                                                $url
  * @property \Modules\Tag\Models\TagCat                                           $tagCat
-<<<<<<< HEAD
-<<<<<<< HEAD
  *
-=======
->>>>>>> 160a6ab (first)
-=======
->>>>>>> fc24fbf (first)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -58,15 +50,7 @@ class Tag extends BaseModelLang {
 
     protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     // protected $guard = ['id'];
-=======
-    //protected $guard = ['id'];
->>>>>>> 160a6ab (first)
-=======
-    //protected $guard = ['id'];
->>>>>>> fc24fbf (first)
 
     public function treeLabel(): string {
         return (string) optional($this->post)->title;
@@ -77,15 +61,7 @@ class Tag extends BaseModelLang {
     }
 
     public function parent(): HasOne {
-<<<<<<< HEAD
-<<<<<<< HEAD
         return $this->hasOne(self::class, 'parent_id', 'id');
-=======
-        return $this->hasOne(Tag::class, 'parent_id', 'id');
->>>>>>> 160a6ab (first)
-=======
-        return $this->hasOne(Tag::class, 'parent_id', 'id');
->>>>>>> fc24fbf (first)
     }
     /*
     //questa funzione non dovrebbe essere qui, perchè non è generico
@@ -120,34 +96,10 @@ class Tag extends BaseModelLang {
         $pivot_table = $pivot->getTable();
 
         return $this->morphedByMany(Article::class, 'post', $pivot_table)
-<<<<<<< HEAD
-<<<<<<< HEAD
             ->using(\get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) // Eager;
-=======
-=======
->>>>>>> fc24fbf (first)
-            ->using(get_class($pivot))
-            ->withPivot($pivot_fields)
-            ->withTimestamps()
-            ->with(['post']) //Eager;
-<<<<<<< HEAD
->>>>>>> 160a6ab (first)
-=======
->>>>>>> fc24fbf (first)
             ;
     }
-=======
-=======
->>>>>>> 7caab11 (up)
-use Spatie\Tags\Tag as BaseTag;
-
-class Tag extends BaseTag {
-    protected $connection = 'tag'; // this will use the specified database connection
-<<<<<<< HEAD
->>>>>>> 4fabb56 (first)
-=======
->>>>>>> 7caab11 (up)
 }
