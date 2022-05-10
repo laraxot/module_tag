@@ -15,10 +15,14 @@ namespace Modules\Tag\Models;
  */
 class CategoryMorph extends BaseMorphPivot {
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
 =======
     /*
 >>>>>>> 160a6ab (first)
+=======
+    /*
+>>>>>>> fc24fbf (first)
      * Attributes that should be mass-assignable.
      *
      * @var array

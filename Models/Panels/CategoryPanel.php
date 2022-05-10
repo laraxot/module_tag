@@ -6,10 +6,14 @@ namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 // --- Services --
 =======
 //--- Services --
 >>>>>>> 160a6ab (first)
+=======
+//--- Services --
+>>>>>>> fc24fbf (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
@@ -17,20 +21,30 @@ class CategoryPanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @var string
+>>>>>>> fc24fbf (first)
      */
     public static string $model = 'Modules\Tag\Models\Category';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @var string
+>>>>>>> fc24fbf (first)
      */
     public static string $title = 'title';
 
@@ -86,24 +100,34 @@ class CategoryPanel extends XotBasePanel {
      */
     public static function indexQuery(array $data, $query) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // return $query->where('user_id', $request->user()->id);
 =======
         //return $query->where('user_id', $request->user()->id);
 >>>>>>> 160a6ab (first)
+=======
+        //return $query->where('user_id', $request->user()->id);
+>>>>>>> fc24fbf (first)
         return $query;
     }
 
     /**
      * Get the fields displayed by the resource.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> fc24fbf (first)
      *
      * @return array
         'col_size' => 6,
         'sortable' => 1,
         'rules' => 'required',
         'rules_messages' => ['it'=>['required'=>'Nome Obbligatorio']],
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
+=======
+>>>>>>> fc24fbf (first)
         'value'=>'..',
      */
     public function fields(): array {
@@ -124,10 +148,14 @@ class CategoryPanel extends XotBasePanel {
                 'type' => 'String',
                 'name' => 'post.subtitle',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // 'rules' => 'required',
 =======
                 //'rules' => 'required',
 >>>>>>> 160a6ab (first)
+=======
+                //'rules' => 'required',
+>>>>>>> fc24fbf (first)
             ],
             (object) [
                 'type' => 'SelectParent',
@@ -164,10 +192,15 @@ class CategoryPanel extends XotBasePanel {
     /**
      * Get the tabs available.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @return array
+>>>>>>> fc24fbf (first)
      */
     public function tabs(): array {
         $tabs_name = [];
@@ -178,10 +211,15 @@ class CategoryPanel extends XotBasePanel {
     /**
      * Get the cards available for the request.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @return array
+>>>>>>> fc24fbf (first)
      */
     public function cards(Request $request): array {
         return [];
@@ -192,10 +230,15 @@ class CategoryPanel extends XotBasePanel {
      *
      * @param \Illuminate\Http\Request $request
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @return array
+>>>>>>> fc24fbf (first)
      */
     public function filters(Request $request = null): array {
         return [];
@@ -204,10 +247,15 @@ class CategoryPanel extends XotBasePanel {
     /**
      * Get the lenses available for the resource.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @return array
+>>>>>>> fc24fbf (first)
      */
     public function lenses(Request $request): array {
         return [];
@@ -216,10 +264,15 @@ class CategoryPanel extends XotBasePanel {
     /**
      * Get the actions available for the resource.
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
 >>>>>>> 160a6ab (first)
+=======
+     *
+     * @return array
+>>>>>>> fc24fbf (first)
      */
     public function actions(): array {
         return [];
