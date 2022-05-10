@@ -24,11 +24,19 @@ trait HasTagTrait {
             ->using($pivot_class)
             ->withPivot($pivot_fields)
             ->withTimestamps()
+<<<<<<< HEAD
             ->with(['post']) // Eager;
             ;
     }
 
     // da fare
+=======
+            ->with(['post']) //Eager;
+            ;
+    }
+
+    //da fare
+>>>>>>> 160a6ab (first)
     public function linkable(): MorphTo {
         return $this->morphTo('post');
     }

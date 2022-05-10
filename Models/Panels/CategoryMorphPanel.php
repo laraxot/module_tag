@@ -1,22 +1,39 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
 // --- Services --
+=======
+namespace Modules\Tag\Models\Panels;
+
+use Illuminate\Http\Request;
+//--- Services --
+>>>>>>> 160a6ab (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class CategoryMorphPanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
+<<<<<<< HEAD
+=======
+     *
+     * @var string
+>>>>>>> 160a6ab (first)
      */
     public static string $model = 'Modules\Tag\Models\Panels\CategoryMorphPanel';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
+<<<<<<< HEAD
+=======
+     *
+     * @var string
+>>>>>>> 160a6ab (first)
      */
     public static string $title = 'title';
 
@@ -25,27 +42,47 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @var array
      */
+<<<<<<< HEAD
     public static $search = [
     ];
+=======
+    public static $search = array (
+);
+>>>>>>> 160a6ab (first)
 
     /**
      * The relationships that should be eager loaded on index queries.
      *
      * @var array
      */
+<<<<<<< HEAD
     public function with(): array {
         return [];
     }
 
     public function search(): array {
+=======
+    public function with():array {
+        return [];
+    }
+
+    public function search() :array {
+
+>>>>>>> 160a6ab (first)
         return [];
     }
 
     /**
      * on select the option id
      *
+<<<<<<< HEAD
      * quando aggiungi un campo select, è il numero della chiave
      * che viene messo come valore su value="id"
+=======
+     * quando aggiungi un campo select, è il numero della chiave 
+     * che viene messo come valore su value="id"
+     *
+>>>>>>> 160a6ab (first)
      */
     public function optionId(object $row) {
         return $row->getKey();
@@ -54,7 +91,11 @@ class CategoryMorphPanel extends XotBasePanel {
     /**
      * on select the option label.
      */
+<<<<<<< HEAD
     public function optionLabel(object $row): string {
+=======
+    public function optionLabel(object $row):string {
+>>>>>>> 160a6ab (first)
         return $row->area_define_name;
     }
 
@@ -72,6 +113,7 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @return RowsContract
      */
+<<<<<<< HEAD
     public static function indexQuery(array $data, $query) {
         // return $query->where('user_id', $request->user()->id);
         return $query;
@@ -125,12 +167,91 @@ class CategoryMorphPanel extends XotBasePanel {
                 'comment' => null,
             ],
         ];
+=======
+    public static function indexQuery(array $data, $query)
+    {
+        //return $query->where('user_id', $request->user()->id);
+        return $query;
+    }
+
+
+
+    /**
+     * Get the fields displayed by the resource.
+     *
+     * @return array
+        'col_size' => 6,
+        'sortable' => 1,
+        'rules' => 'required',
+        'rules_messages' => ['it'=>['required'=>'Nome Obbligatorio']],
+        'value'=>'..',
+     */
+    public function fields(): array {
+        return array (
+  0 => 
+  (object) array(
+     'type' => 'Id',
+     'name' => 'id',
+     'comment' => NULL,
+  ),
+  1 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'category_id',
+     'rules' => 'required',
+     'comment' => NULL,
+  ),
+  2 => 
+  (object) array(
+     'type' => 'String',
+     'name' => 'post_type',
+     'comment' => NULL,
+  ),
+  3 => 
+  (object) array(
+     'type' => 'Bigint',
+     'name' => 'post_id',
+     'comment' => NULL,
+  ),
+  4 => 
+  (object) array(
+     'type' => 'String',
+     'name' => 'created_by',
+     'comment' => NULL,
+  ),
+  5 => 
+  (object) array(
+     'type' => 'String',
+     'name' => 'updated_by',
+     'comment' => NULL,
+  ),
+  6 => 
+  (object) array(
+     'type' => 'Integer',
+     'name' => 'user_id',
+     'comment' => NULL,
+  ),
+  7 => 
+  (object) array(
+     'type' => 'Text',
+     'name' => 'note',
+     'comment' => NULL,
+  ),
+);
+>>>>>>> 160a6ab (first)
     }
 
     /**
      * Get the tabs available.
+<<<<<<< HEAD
      */
     public function tabs(): array {
+=======
+     *
+     * @return array
+     */
+    public function tabs():array {
+>>>>>>> 160a6ab (first)
         $tabs_name = [];
 
         return $tabs_name;
@@ -138,8 +259,15 @@ class CategoryMorphPanel extends XotBasePanel {
 
     /**
      * Get the cards available for the request.
+<<<<<<< HEAD
      */
     public function cards(Request $request): array {
+=======
+     *
+     * @return array
+     */
+    public function cards(Request $request):array {
+>>>>>>> 160a6ab (first)
         return [];
     }
 
@@ -147,22 +275,43 @@ class CategoryMorphPanel extends XotBasePanel {
      * Get the filters available for the resource.
      *
      * @param \Illuminate\Http\Request $request
+<<<<<<< HEAD
      */
     public function filters(Request $request = null): array {
+=======
+     *
+     * @return array
+     */
+    public function filters(Request $request = null):array {
+>>>>>>> 160a6ab (first)
         return [];
     }
 
     /**
      * Get the lenses available for the resource.
+<<<<<<< HEAD
      */
     public function lenses(Request $request): array {
+=======
+     *
+     * @return array
+     */
+    public function lenses(Request $request):array {
+>>>>>>> 160a6ab (first)
         return [];
     }
 
     /**
      * Get the actions available for the resource.
+<<<<<<< HEAD
      */
     public function actions(): array {
+=======
+     *
+     * @return array
+     */
+    public function actions():array {
+>>>>>>> 160a6ab (first)
         return [];
     }
 }

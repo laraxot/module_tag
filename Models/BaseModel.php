@@ -5,9 +5,15 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
+<<<<<<< HEAD
 // ---------- traits
 use Illuminate\Database\Eloquent\Model;
 // use Laravel\Scout\Searchable;
+=======
+//---------- traits
+use Illuminate\Database\Eloquent\Model;
+//use Laravel\Scout\Searchable;
+>>>>>>> 160a6ab (first)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -15,8 +21,13 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModel extends Model {
     use Updater;
+<<<<<<< HEAD
     // use Searchable;
     // use Cachable;
+=======
+    //use Searchable;
+    //use Cachable;
+>>>>>>> 160a6ab (first)
     protected $connection = 'tag'; // this will use the specified database connection
     /**
      * @var string[]
@@ -26,7 +37,11 @@ abstract class BaseModel extends Model {
      * @var array
      */
     protected $casts = [
+<<<<<<< HEAD
         // 'published_at' => 'datetime:Y-m-d', // da verificare
+=======
+        //'published_at' => 'datetime:Y-m-d', // da verificare
+>>>>>>> 160a6ab (first)
     ];
 
     /**
@@ -45,10 +60,18 @@ abstract class BaseModel extends Model {
      * @var array
      */
     protected $hidden = [
+<<<<<<< HEAD
         // 'password'
+=======
+        //'password'
+>>>>>>> 160a6ab (first)
     ];
     /**
      * @var bool
      */
     public $timestamps = true;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 160a6ab (first)

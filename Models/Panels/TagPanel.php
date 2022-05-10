@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 // --- Services --
+=======
+//--- Services --
+>>>>>>> 160a6ab (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
@@ -83,7 +87,11 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'Text',
                 'name' => 'tag_type',
+<<<<<<< HEAD
                 // 'rules' => 'required',
+=======
+                //'rules' => 'required',
+>>>>>>> 160a6ab (first)
                 'comment' => null,
                 'col_size' => 5,
             ],
@@ -91,7 +99,11 @@ class TagPanel extends XotBasePanel {
             (object) [
                 'type' => 'SelectRelationshipOne',
                 'name' => 'tagCat',
+<<<<<<< HEAD
                 // 'rules' => 'required',
+=======
+                //'rules' => 'required',
+>>>>>>> 160a6ab (first)
                 'comment' => null,
                 'col_size' => 5,
             ],

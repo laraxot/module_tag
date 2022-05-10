@@ -33,7 +33,11 @@ trait HasTags {
     }
 
     public function tagsRelation(): MorphToMany {
+<<<<<<< HEAD
         // return $this->morphToMany(Tag::class, 'taggable')->withTimestamps();
+=======
+        //return $this->morphToMany(Tag::class, 'taggable')->withTimestamps();
+>>>>>>> 160a6ab (first)
         $pivot_class = TagMorph::class;
         $pivot = app($pivot_class);
         $pivot_fields = $pivot->getFillable();
@@ -43,7 +47,11 @@ trait HasTags {
             ->using($pivot_class)
             ->withPivot($pivot_fields)
             ->withTimestamps()
+<<<<<<< HEAD
             ->with(['post']) // Eager;
+=======
+            ->with(['post']) //Eager;
+>>>>>>> 160a6ab (first)
             ;
     }
 }

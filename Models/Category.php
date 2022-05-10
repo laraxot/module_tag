@@ -21,7 +21,10 @@ namespace Modules\Tag\Models;
  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
+<<<<<<< HEAD
  *
+=======
+>>>>>>> 160a6ab (first)
  * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
@@ -38,8 +41,16 @@ class Category extends BaseModelLang {
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      *
      */
+<<<<<<< HEAD
     // public function shops() {
         // Class Modules\Tag\Models\Shop not found.
     //    return $this->morphRelated(Shop::class, true);
     // }
 }
+=======
+    //public function shops() {
+        //Class Modules\Tag\Models\Shop not found.
+    //    return $this->morphRelated(Shop::class, true);
+    //}
+}
+>>>>>>> 160a6ab (first)
