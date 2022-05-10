@@ -14,6 +14,7 @@ class TagServiceProvider extends XotBaseServiceProvider {
     public string $module_name = 'tag';
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -21,3 +22,6 @@ class TagServiceProvider extends XotBaseServiceProvider {
 =======
 }
 >>>>>>> fc24fbf (first)
+=======
+}
+>>>>>>> 4fabb56 (first)

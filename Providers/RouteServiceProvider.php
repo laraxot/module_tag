@@ -17,6 +17,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider {
     protected string $module_ns = __NAMESPACE__;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -24,3 +25,6 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider {
 =======
 }
 >>>>>>> fc24fbf (first)
+=======
+}
+>>>>>>> 4fabb56 (first)
