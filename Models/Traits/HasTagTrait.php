@@ -26,6 +26,7 @@ trait HasTagTrait {
             ->withTimestamps()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             ->with(['post']) // Eager;
             ;
     }
@@ -34,15 +35,20 @@ trait HasTagTrait {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
             ->with(['post']) //Eager;
             ;
     }
 
     //da fare
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
     public function linkable(): MorphTo {
         return $this->morphTo('post');
     }

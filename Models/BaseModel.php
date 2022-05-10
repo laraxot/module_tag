@@ -7,6 +7,7 @@ namespace Modules\Tag\Models;
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // ---------- traits
 use Illuminate\Database\Eloquent\Model;
 // use Laravel\Scout\Searchable;
@@ -20,6 +21,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Model;
 //use Laravel\Scout\Searchable;
 >>>>>>> fc24fbf (first)
+=======
+//---------- traits
+use Illuminate\Database\Eloquent\Model;
+//use Laravel\Scout\Searchable;
+>>>>>>> 4fabb56 (first)
 use Modules\Xot\Traits\Updater;
 
 /**
@@ -27,6 +33,7 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseModel extends Model {
     use Updater;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     // use Searchable;
@@ -39,6 +46,10 @@ abstract class BaseModel extends Model {
     //use Searchable;
     //use Cachable;
 >>>>>>> fc24fbf (first)
+=======
+    //use Searchable;
+    //use Cachable;
+>>>>>>> 4fabb56 (first)
     protected $connection = 'tag'; // this will use the specified database connection
     /**
      * @var string[]
@@ -50,6 +61,7 @@ abstract class BaseModel extends Model {
     protected $casts = [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 'published_at' => 'datetime:Y-m-d', // da verificare
 =======
         //'published_at' => 'datetime:Y-m-d', // da verificare
@@ -57,6 +69,9 @@ abstract class BaseModel extends Model {
 =======
         //'published_at' => 'datetime:Y-m-d', // da verificare
 >>>>>>> fc24fbf (first)
+=======
+        //'published_at' => 'datetime:Y-m-d', // da verificare
+>>>>>>> 4fabb56 (first)
     ];
 
     /**
@@ -77,6 +92,7 @@ abstract class BaseModel extends Model {
     protected $hidden = [
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // 'password'
 =======
         //'password'
@@ -84,11 +100,15 @@ abstract class BaseModel extends Model {
 =======
         //'password'
 >>>>>>> fc24fbf (first)
+=======
+        //'password'
+>>>>>>> 4fabb56 (first)
     ];
     /**
      * @var bool
      */
     public $timestamps = true;
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 }
@@ -98,3 +118,6 @@ abstract class BaseModel extends Model {
 =======
 }
 >>>>>>> fc24fbf (first)
+=======
+}
+>>>>>>> 4fabb56 (first)

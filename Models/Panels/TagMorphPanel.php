@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // --- Services --
 =======
 //--- Services --
@@ -15,6 +16,9 @@ use Illuminate\Http\Request;
 =======
 //--- Services --
 >>>>>>> fc24fbf (first)
+=======
+//--- Services --
+>>>>>>> 4fabb56 (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 

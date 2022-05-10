@@ -14,19 +14,7 @@ namespace Modules\Tag\Models;
  * @mixin IdeHelperCategoryMorph
  */
 class CategoryMorph extends BaseMorphPivot {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /**
-=======
     /*
->>>>>>> 160a6ab (first)
-=======
-    /*
->>>>>>> fc24fbf (first)
-=======
-    /*
->>>>>>> 4fabb56 (first)
      * Attributes that should be mass-assignable.
      *
      * @var array

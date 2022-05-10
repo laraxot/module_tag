@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 declare(strict_types=1);
 
 namespace Modules\Tag\Models\Panels;
@@ -11,14 +12,19 @@ use Illuminate\Http\Request;
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
 //--- Services --
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
@@ -27,6 +33,7 @@ class CategoryMorphPanel extends XotBasePanel {
      * The model the resource corresponds to.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
@@ -35,6 +42,10 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @var string
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @var string
+>>>>>>> 4fabb56 (first)
      */
     public static string $model = 'Modules\Tag\Models\Panels\CategoryMorphPanel';
 
@@ -42,6 +53,7 @@ class CategoryMorphPanel extends XotBasePanel {
      * The single value that should be used to represent the resource when being displayed.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
@@ -50,6 +62,10 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @var string
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @var string
+>>>>>>> 4fabb56 (first)
      */
     public static string $title = 'title';
 
@@ -58,6 +74,7 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @var array
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public static $search = [
@@ -70,12 +87,17 @@ class CategoryMorphPanel extends XotBasePanel {
     public static $search = array (
 );
 >>>>>>> fc24fbf (first)
+=======
+    public static $search = array (
+);
+>>>>>>> 4fabb56 (first)
 
     /**
      * The relationships that should be eager loaded on index queries.
      *
      * @var array
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public function with(): array {
@@ -86,6 +108,8 @@ class CategoryMorphPanel extends XotBasePanel {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
     public function with():array {
         return [];
     }
@@ -93,15 +117,19 @@ class CategoryMorphPanel extends XotBasePanel {
     public function search() :array {
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         return [];
     }
 
     /**
      * on select the option id
      *
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      * quando aggiungi un campo select, è il numero della chiave
@@ -116,6 +144,11 @@ class CategoryMorphPanel extends XotBasePanel {
      * che viene messo come valore su value="id"
      *
 >>>>>>> fc24fbf (first)
+=======
+     * quando aggiungi un campo select, è il numero della chiave 
+     * che viene messo come valore su value="id"
+     *
+>>>>>>> 4fabb56 (first)
      */
     public function optionId(object $row) {
         return $row->getKey();
@@ -126,6 +159,7 @@ class CategoryMorphPanel extends XotBasePanel {
      */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function optionLabel(object $row): string {
 =======
     public function optionLabel(object $row):string {
@@ -133,6 +167,9 @@ class CategoryMorphPanel extends XotBasePanel {
 =======
     public function optionLabel(object $row):string {
 >>>>>>> fc24fbf (first)
+=======
+    public function optionLabel(object $row):string {
+>>>>>>> 4fabb56 (first)
         return $row->area_define_name;
     }
 
@@ -150,6 +187,7 @@ class CategoryMorphPanel extends XotBasePanel {
      *
      * @return RowsContract
      */
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     public static function indexQuery(array $data, $query) {
@@ -208,6 +246,8 @@ class CategoryMorphPanel extends XotBasePanel {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
     public static function indexQuery(array $data, $query)
     {
         //return $query->where('user_id', $request->user()->id);
@@ -279,13 +319,17 @@ class CategoryMorphPanel extends XotBasePanel {
   ),
 );
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
     }
 
     /**
      * Get the tabs available.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      */
@@ -293,14 +337,19 @@ class CategoryMorphPanel extends XotBasePanel {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
      */
     public function tabs():array {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         $tabs_name = [];
 
         return $tabs_name;
@@ -310,19 +359,25 @@ class CategoryMorphPanel extends XotBasePanel {
      * Get the cards available for the request.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      */
     public function cards(Request $request): array {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
      */
     public function cards(Request $request):array {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         return [];
     }
 
@@ -332,19 +387,25 @@ class CategoryMorphPanel extends XotBasePanel {
      * @param \Illuminate\Http\Request $request
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      */
     public function filters(Request $request = null): array {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
      */
     public function filters(Request $request = null):array {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         return [];
     }
 
@@ -352,19 +413,25 @@ class CategoryMorphPanel extends XotBasePanel {
      * Get the lenses available for the resource.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      */
     public function lenses(Request $request): array {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
      */
     public function lenses(Request $request):array {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         return [];
     }
 
@@ -372,19 +439,25 @@ class CategoryMorphPanel extends XotBasePanel {
      * Get the actions available for the resource.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
      */
     public function actions(): array {
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
      */
     public function actions():array {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         return [];
     }
 }

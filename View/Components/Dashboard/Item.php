@@ -8,6 +8,7 @@ use Illuminate\View\Component;
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // use Modules\Xot\View\Components\XotBaseComponent;
 =======
 //use Modules\Xot\View\Components\XotBaseComponent;
@@ -15,6 +16,9 @@ use Illuminate\View\Component;
 =======
 //use Modules\Xot\View\Components\XotBaseComponent;
 >>>>>>> fc24fbf (first)
+=======
+//use Modules\Xot\View\Components\XotBaseComponent;
+>>>>>>> 4fabb56 (first)
 
 /**
  * Class Field.

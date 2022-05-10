@@ -7,6 +7,7 @@ namespace Modules\Tag\Models\Panels;
 use Illuminate\Http\Request;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // --- Services --
 =======
 //--- Services --
@@ -14,6 +15,9 @@ use Illuminate\Http\Request;
 =======
 //--- Services --
 >>>>>>> fc24fbf (first)
+=======
+//--- Services --
+>>>>>>> 4fabb56 (first)
 
 use Modules\Xot\Models\Panels\XotBasePanel;
 
@@ -22,6 +26,7 @@ class CategoryPanel extends XotBasePanel {
      * The model the resource corresponds to.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
@@ -30,6 +35,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @var string
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @var string
+>>>>>>> 4fabb56 (first)
      */
     public static string $model = 'Modules\Tag\Models\Category';
 
@@ -37,6 +46,7 @@ class CategoryPanel extends XotBasePanel {
      * The single value that should be used to represent the resource when being displayed.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @var string
@@ -45,6 +55,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @var string
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @var string
+>>>>>>> 4fabb56 (first)
      */
     public static string $title = 'title';
 
@@ -101,6 +115,7 @@ class CategoryPanel extends XotBasePanel {
     public static function indexQuery(array $data, $query) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         // return $query->where('user_id', $request->user()->id);
 =======
         //return $query->where('user_id', $request->user()->id);
@@ -108,6 +123,9 @@ class CategoryPanel extends XotBasePanel {
 =======
         //return $query->where('user_id', $request->user()->id);
 >>>>>>> fc24fbf (first)
+=======
+        //return $query->where('user_id', $request->user()->id);
+>>>>>>> 4fabb56 (first)
         return $query;
     }
 
@@ -115,9 +133,12 @@ class CategoryPanel extends XotBasePanel {
      * Get the fields displayed by the resource.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
      *
      * @return array
         'col_size' => 6,
@@ -125,9 +146,12 @@ class CategoryPanel extends XotBasePanel {
         'rules' => 'required',
         'rules_messages' => ['it'=>['required'=>'Nome Obbligatorio']],
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 160a6ab (first)
 =======
 >>>>>>> fc24fbf (first)
+=======
+>>>>>>> 4fabb56 (first)
         'value'=>'..',
      */
     public function fields(): array {
@@ -149,6 +173,7 @@ class CategoryPanel extends XotBasePanel {
                 'name' => 'post.subtitle',
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 // 'rules' => 'required',
 =======
                 //'rules' => 'required',
@@ -156,6 +181,9 @@ class CategoryPanel extends XotBasePanel {
 =======
                 //'rules' => 'required',
 >>>>>>> fc24fbf (first)
+=======
+                //'rules' => 'required',
+>>>>>>> 4fabb56 (first)
             ],
             (object) [
                 'type' => 'SelectParent',
@@ -193,6 +221,7 @@ class CategoryPanel extends XotBasePanel {
      * Get the tabs available.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
@@ -201,6 +230,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @return array
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @return array
+>>>>>>> 4fabb56 (first)
      */
     public function tabs(): array {
         $tabs_name = [];
@@ -212,6 +245,7 @@ class CategoryPanel extends XotBasePanel {
      * Get the cards available for the request.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
@@ -220,6 +254,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @return array
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @return array
+>>>>>>> 4fabb56 (first)
      */
     public function cards(Request $request): array {
         return [];
@@ -231,6 +269,7 @@ class CategoryPanel extends XotBasePanel {
      * @param \Illuminate\Http\Request $request
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
@@ -239,6 +278,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @return array
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @return array
+>>>>>>> 4fabb56 (first)
      */
     public function filters(Request $request = null): array {
         return [];
@@ -248,6 +291,7 @@ class CategoryPanel extends XotBasePanel {
      * Get the lenses available for the resource.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
@@ -256,6 +300,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @return array
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @return array
+>>>>>>> 4fabb56 (first)
      */
     public function lenses(Request $request): array {
         return [];
@@ -265,6 +313,7 @@ class CategoryPanel extends XotBasePanel {
      * Get the actions available for the resource.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
      *
      * @return array
@@ -273,6 +322,10 @@ class CategoryPanel extends XotBasePanel {
      *
      * @return array
 >>>>>>> fc24fbf (first)
+=======
+     *
+     * @return array
+>>>>>>> 4fabb56 (first)
      */
     public function actions(): array {
         return [];
