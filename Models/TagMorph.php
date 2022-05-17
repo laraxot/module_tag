@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 /**
- * Modules\Tag\Models\TagMorph
+ * Modules\Tag\Models\TagMorph.
  *
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newQuery()

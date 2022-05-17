@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
+use Modules\Xot\Contracts\RowsContract;
 // --- Services --
 
 use Modules\Xot\Models\Panels\XotBasePanel;
@@ -32,32 +33,31 @@ class TagPanel extends XotBasePanel {
      * The relationships that should be eager loaded on index queries.
      */
     public function with(): array {
-        return ['post'];
+        return [];
     }
 
     public function search(): array {
-        return ['post.title'];
-    }
-
-    public function options($data = []) {
-        if (null === $data) {
-            $data = request()->all();
-        }
-
-        return $this->rows($data)->where('tag_type', optional($this->getParent())->postType())->get();
+        return [];
     }
 
     /**
      * on select the option id.
+     *
+     * quando aggiungi un campo select, è il numero della chiave
+     * che viene messo come valore su value="id"
+     *
+     * @param Modules\Tag\Models\Tag $row
+     *
+     * @return int|string|null
      */
-    public function optionId(object $row) {
-        return $row->id;
+    public function optionId($row) {
+        return $row->getKey();
     }
 
     /**
      * on select the option label.
      */
-    public function optionLabel(object $row): string {
+    public function optionLabel($row): string {
         return (string) $row->title;
     }
 
@@ -66,6 +66,18 @@ class TagPanel extends XotBasePanel {
      */
     public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
         return null;
+    }
+
+    /**
+     * Build an "index" query for the given resource.
+     *
+     * @param RowsContract $query
+     *
+     * @return RowsContract
+     */
+    public static function indexQuery(array $data, $query) {
+        // return $query->where('user_id', $request->user()->id);
+        return $query;
     }
 
     /**
@@ -78,44 +90,32 @@ class TagPanel extends XotBasePanel {
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
-                'col_size' => 2,
-            ],
-            (object) [
-                'type' => 'Text',
-                'name' => 'tag_type',
-                // 'rules' => 'required',
-                'comment' => null,
-                'col_size' => 5,
             ],
 
             (object) [
-                'type' => 'SelectRelationshipOne',
-                'name' => 'tagCat',
-                // 'rules' => 'required',
+                'type' => 'Json',
+                'name' => 'name',
+                'rules' => 'required',
                 'comment' => null,
-                'col_size' => 5,
+            ],
+
+            (object) [
+                'type' => 'Json',
+                'name' => 'slug',
+                'rules' => 'required',
+                'comment' => null,
             ],
 
             (object) [
                 'type' => 'String',
-                'name' => 'post.title',
-                'rules' => 'required',
+                'name' => 'type',
                 'comment' => null,
-                'col_size' => 12,
             ],
 
             (object) [
-                'type' => 'SelectParent',
-                'name' => 'parent_id',
+                'type' => 'Integer',
+                'name' => 'order_column',
                 'comment' => null,
-                'col_size' => 2,
-            ],
-
-            (object) [
-                'type' => 'Image',
-                'name' => 'post.image_src',
-                'comment' => null,
-                'col_size' => 2,
             ],
         ];
     }
