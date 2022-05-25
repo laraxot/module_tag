@@ -27,7 +27,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Category query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  * @mixin \Eloquent
- * @mixin IdeHelperCategory
  * @property int $id
  * @property int $parent_id
  * @property string|null $created_by
@@ -40,6 +39,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereParentId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedBy($value)
+ * @mixin IdeHelperCategory
  */
 class Category extends BaseModelLang {
     protected $fillable = ['id', 'parent_id', 'created_by', 'updated_by'];

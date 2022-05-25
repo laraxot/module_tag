@@ -11,7 +11,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph query()
  * @mixin \Eloquent
- * @mixin IdeHelperCategoryMorph
  * @property int $id
  * @property int $category_id
  * @property string|null $post_type
@@ -32,6 +31,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUserId($value)
+ * @mixin IdeHelperCategoryMorph
  */
 class CategoryMorph extends BaseMorphPivot {
     /**

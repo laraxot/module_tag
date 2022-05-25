@@ -27,7 +27,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  * @mixin \Eloquent
- * @mixin IdeHelperTagCat
  * @property int $id
  * @property string $tag_cat_type
  * @property int $type_input
@@ -46,6 +45,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereTypeInput($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedBy($value)
+ * @mixin IdeHelperTagCat
  */
 class TagCat extends BaseModelLang {
     protected $fillable = ['id', 'tag_cat_type', 'type_input', 'pos', 'old_id'];
