@@ -11,7 +11,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph query()
  * @mixin \Eloquent
- * @mixin IdeHelperTagMorph
  * @property int $id
  * @property int $tag_id
  * @property string|null $post_type
@@ -32,6 +31,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUserId($value)
+ * @mixin IdeHelperTagMorph
  */
 class TagMorph extends BaseMorphPivot {
     /**
