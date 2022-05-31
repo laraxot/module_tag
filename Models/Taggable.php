@@ -16,7 +16,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTagId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableType($value)
- * @mixin IdeHelperTaggable
+ * @mixin \Eloquent
  */
 class Taggable extends BaseMorphPivot {
     /**
