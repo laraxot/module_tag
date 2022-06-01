@@ -15,12 +15,11 @@ namespace Modules\Tag\Models;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
- * @property int|null $auth_user_id
  * @property string|null $note
+ * @property int|null $user_id
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph query()
- * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereAuthUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereId($value)
@@ -30,6 +29,7 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereTagId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagMorph whereUserId($value)
  * @mixin \Eloquent
  */
 class TagMorph extends BaseMorphPivot {
