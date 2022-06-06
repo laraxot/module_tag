@@ -6,6 +6,7 @@ namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
+use Modules\Tag\Models\TagMorph;
 // --- Services --
 
 use Modules\Xot\Models\Panels\XotBasePanel;
@@ -21,45 +22,16 @@ class TagMorphPanel extends XotBasePanel {
      */
     public static string $title = 'title';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-    ];
-
-    /**
-     * The relationships that should be eager loaded on index queries.
-     */
-    public function with(): array {
-        return [];
-    }
-
-    public function search(): array {
-        return [];
-    }
-
-    /**
-     * on select the option id.
-     */
-    public function optionId(object $row) {
-        return $row->id;
-    }
-
+    
     /**
      * on select the option label.
+     * @param TagMorph $row
      */
-    public function optionLabel(object $row): string {
+    public function optionLabel($row): string {
         return $row->title;
     }
 
-    /**
-     * @return null
-     */
-    public function indexNav(): ?Renderable {
-        return null;
-    }
+  
 
     /**
      * Get the fields displayed by the resource.

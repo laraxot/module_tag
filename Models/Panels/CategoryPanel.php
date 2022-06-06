@@ -7,6 +7,7 @@ namespace Modules\Tag\Models\Panels;
 use Illuminate\Http\Request;
 // --- Services --
 
+use Modules\Tag\Models\Category;
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class CategoryPanel extends XotBasePanel {
@@ -21,58 +22,10 @@ class CategoryPanel extends XotBasePanel {
     public static string $title = 'title';
 
     /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-    ];
-
-    /**
      * The relationships that should be eager loaded on index queries.
      */
     public function with(): array {
         return ['post'];
-    }
-
-    public function search(): array {
-        return [];
-    }
-
-    /**
-     * on select the option id.
-     *
-     * quando aggiungi un campo select, è il numero della chiave
-     * che viene messo come valore su value="id"
-     */
-    public function optionId(object $row) {
-        return $row->getKey();
-    }
-
-    /**
-     * on select the option label.
-     */
-    public function optionLabel(object $row): string {
-        return $row->title;
-    }
-
-    /**
-     * index navigation.
-     */
-    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return null;
-    }
-
-    /**
-     * Build an "index" query for the given resource.
-     *
-     * @param RowsContract $query
-     *
-     * @return RowsContract
-     */
-    public static function indexQuery(array $data, $query) {
-        // return $query->where('user_id', $request->user()->id);
-        return $query;
     }
 
     /**

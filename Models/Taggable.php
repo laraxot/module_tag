@@ -22,7 +22,7 @@ class Taggable extends BaseMorphPivot {
     /**
      * Undocumented variable.
      *
-     * @var array
+     * @var array<string>
      */
     protected $fillable = ['tag_id', 'taggable_id', 'taggable_type'];
 
