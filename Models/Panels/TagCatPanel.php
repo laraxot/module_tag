@@ -20,45 +20,6 @@ class TagCatPanel extends XotBasePanel {
      */
     public static string $title = 'title';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-    ];
-
-    /**
-     * The relationships that should be eager loaded on index queries.
-     */
-    public function with(): array {
-        return [];
-    }
-
-    public function search(): array {
-        return [];
-    }
-
-    /**
-     * on select the option id.
-     */
-    public function optionId(object $row) {
-        return $row->id;
-    }
-
-    /**
-     * on select the option label.
-     */
-    public function optionLabel(object $row): string {
-        return $row->title;
-    }
-
-    /**
-     * index navigation.
-     */
-    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
-        return null;
-    }
 
     /**
      * Get the fields displayed by the resource.

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models\Panels;
 
+use Modules\Tag\Models\Tag;
 use Illuminate\Http\Request;
-use Modules\Xot\Contracts\RowsContract;
 // --- Services --
 
+use Modules\Xot\Contracts\RowsContract;
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class TagPanel extends XotBasePanel {
@@ -46,7 +47,7 @@ class TagPanel extends XotBasePanel {
      * quando aggiungi un campo select, è il numero della chiave
      * che viene messo come valore su value="id"
      *
-     * @param Modules\Tag\Models\Tag $row
+     * @param Tag $row
      *
      * @return int|string|null
      */
@@ -56,9 +57,10 @@ class TagPanel extends XotBasePanel {
 
     /**
      * on select the option label.
+     * @param Tag $row
      */
     public function optionLabel($row): string {
-        return (string) $row->title;
+        return (string) implode('-',$row->name); //spatie
     }
 
     /**
