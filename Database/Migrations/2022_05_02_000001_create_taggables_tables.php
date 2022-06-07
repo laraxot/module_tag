@@ -21,5 +21,13 @@ class CreateTaggablesTables extends XotBaseMigration {
                 $table->unique(['tag_id', 'taggable_id', 'taggable_type']);
             }
         );
+        // -- UPDATE --
+        $this->tableUpdate(
+            function (Blueprint $table) {
+                if (! $this->hasColumn('taggable_type')) {
+                    $table->string('taggable_type');
+                }
+            }
+        );
     }
 }
