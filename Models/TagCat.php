@@ -7,15 +7,6 @@ namespace Modules\Tag\Models;
 /**
  * Modules\Tag\Models\TagCat
  *
- * @property int $id
- * @property string $tag_cat_type
- * @property int $type_input
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property int $old_id
- * @property int $pos
  * @property string|null $guid
  * @property string|null $image_src
  * @property-read string|null $lang
@@ -34,15 +25,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat query()
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereOldId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat wherePos($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereTagCatType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereTypeInput($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  * @mixin \Eloquent
  */
