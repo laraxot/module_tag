@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 use Modules\Lang\Models\Traits\LinkedTrait;
 use Modules\Xot\Traits\Updater;
 
-/***
+/**
  * Class BaseModelLang.
+ *
+ * @property string|null $post_type
  */
 abstract class BaseModelLang extends Model {
     use HasFactory;
