@@ -15,45 +15,14 @@ class TaggablePanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
      */
-    public static string $model = 'Modules\Tag\Models\Taggable';
+    public static string $model = Taggable::class;
+    public Taggable $row;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      */
     public static string $title = 'title';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-    ];
-
-    /**
-     * The relationships that should be eager loaded on index queries.
-     */
-    public function with(): array {
-        return [];
-    }
-
-    public function search(): array {
-        return [];
-    }
-
-    /**
-     * on select the option id.
-     *
-     * quando aggiungi un campo select, è il numero della chiave
-     * che viene messo come valore su value="id"
-     *
-     * @param Taggable $row
-     *
-     * @return int|string|null
-     */
-    public function optionId($row) {
-        return $row->getKey();
-    }
 
     /**
      * on select the option label.
