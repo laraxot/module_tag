@@ -52,9 +52,9 @@ class TagCat extends BaseModelLang {
     /**
      * Attributes that should be mass-assignable.
      *
-    
+
      */
-    public function treeLabel(): string {
-        return (string) optional($this->post)->title;
-    }
+    //public function treeLabel(): string {
+    //    return (string) optional($this->post)->title;
+    //}
 }
