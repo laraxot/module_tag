@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Modules\Word\Models;
+namespace Modules\Tag\Models;
 
 use GeneaLabs\LaravelModelCaching\Traits\Cachable;
 // ---------- traits
