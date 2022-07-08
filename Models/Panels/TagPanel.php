@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 use Modules\Xot\Contracts\RowsContract;
 use Modules\Xot\Models\Panels\XotBasePanel;
 
-class TagPanel extends XotBasePanel {
+class TagPanel extends XotBasePanel
+{
     /**
      * The model the resource corresponds to.
      */
@@ -28,14 +29,17 @@ class TagPanel extends XotBasePanel {
      * on select the option label.
      * @param Tag $row
      */
-    public function optionLabel($row): string {
-        return (string) implode('-',$row->name); //spatie
+    public function optionLabel($row): string
+    {
+        //return (string) implode('-', $row->name); //spatie
+        return (string) $row->name;
     }
 
     /**
      * index navigation.
      */
-    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
+    public function indexNav(): ?\Illuminate\Contracts\Support\Renderable
+    {
         return null;
     }
 
@@ -46,7 +50,8 @@ class TagPanel extends XotBasePanel {
      *
      * @return RowsContract
      */
-    public static function indexQuery(array $data, $query) {
+    public static function indexQuery(array $data, $query)
+    {
         // return $query->where('user_id', $request->user()->id);
         return $query;
     }
@@ -55,7 +60,8 @@ class TagPanel extends XotBasePanel {
      * Get the fields displayed by the resource.
         'value'=>'..',
      */
-    public function fields(): array {
+    public function fields(): array
+    {
         return [
             (object) [
                 'type' => 'Id',
@@ -94,7 +100,8 @@ class TagPanel extends XotBasePanel {
     /**
      * Get the tabs available.
      */
-    public function tabs(): array {
+    public function tabs(): array
+    {
         $tabs_name = [];
 
         return $tabs_name;
@@ -103,7 +110,8 @@ class TagPanel extends XotBasePanel {
     /**
      * Get the cards available for the request.
      */
-    public function cards(Request $request): array {
+    public function cards(Request $request): array
+    {
         return [];
     }
 
@@ -112,21 +120,24 @@ class TagPanel extends XotBasePanel {
      *
      * @param \Illuminate\Http\Request $request
      */
-    public function filters(Request $request = null): array {
+    public function filters(Request $request = null): array
+    {
         return [];
     }
 
     /**
      * Get the lenses available for the resource.
      */
-    public function lenses(Request $request): array {
+    public function lenses(Request $request): array
+    {
         return [];
     }
 
     /**
      * Get the actions available for the resource.
      */
-    public function actions(): array {
+    public function actions(): array
+    {
         return [];
     }
 }
