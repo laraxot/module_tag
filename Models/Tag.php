@@ -7,7 +7,10 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
+use Exception;
+use Illuminate\Support\Arr;
 use Spatie\Tags\Tag as BaseTag;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 /**
  * Modules\Tag\Models\Tag
@@ -51,7 +54,29 @@ use Spatie\Tags\Tag as BaseTag;
  * @mixin \Eloquent
  */
 class Tag extends BaseTag {
-    protected $fillable = ['id', 'tag_type', 'tag_cat_id', 'created_at', 'updated_at', 'old_id', 'pos', 'tag_cat_id_up', 'created_by', 'updated_by', 'parent_id', 'name', 'slug', 'type', 'order_column'];
+
+    /**
+     * Undocumented variable
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id', 
+        'tag_type', 
+        'tag_cat_id', 
+        'created_at', 
+        'updated_at', 
+        'old_id', 
+        'pos', 
+        'tag_cat_id_up', 
+        'created_by', 
+        'updated_by', 
+        'parent_id', 
+        'name', 
+        'slug', 
+        'type', 
+        'order_column'
+    ];
 
     /**
      * Undocumented variable.
@@ -59,4 +84,43 @@ class Tag extends BaseTag {
      * @var string
      */
     protected $connection = 'tag'; // this will use the specified database connection
+
+
+    /**
+     * @param mixed $value
+     *
+     * @return $this
+     */
+    public function setCustomProperty(string $name, $value): self {
+        if(!isset($this->pivot)){
+            throw new Exception('['.__LINE__.']['.__FILE__.']');
+        }
+        //dddx($this->pivot->custom_properties);
+        $customProperties = $this->pivot->custom_properties;
+
+        Arr::set($customProperties, $name, $value);
+
+        $this->pivot->custom_properties = $customProperties;
+        $this->pivot->save();
+
+        return $this;
+    }
+
+    /**
+     * Get the value of custom property with the given name.
+     *
+     * @param string $propertyName
+     * @param mixed $default
+     *
+     * @return mixed
+     */
+    public function getCustomProperty(string $propertyName, $default = null): mixed {
+        if(!isset($this->pivot)){
+            throw new Exception('['.__LINE__.']['.__FILE__.']');
+        }
+        $customProperties = $this->pivot->custom_properties;
+
+        return Arr::get($customProperties, $propertyName, $default);
+    }
+    
 }
