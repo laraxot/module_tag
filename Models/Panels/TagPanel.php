@@ -75,25 +75,26 @@ class TagPanel extends XotBasePanel
                 'rules' => 'required',
                 'comment' => null,
             ],
-
+            /*
             (object) [
                 'type' => 'Json',
                 'name' => 'slug',
                 'rules' => 'required',
                 'comment' => null,
             ],
-
+            //*/
             (object) [
                 'type' => 'String',
                 'name' => 'type',
                 'comment' => null,
             ],
-
+            /*
             (object) [
                 'type' => 'Integer',
                 'name' => 'order_column',
                 'comment' => null,
             ],
+            //*/
         ];
     }
 
