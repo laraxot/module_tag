@@ -58,3 +58,27 @@
 });
 </script>
 @endpush
+
+{{--
+// function we want to run
+var fnstring = "runMe";
+
+// find object
+var fn = window[fnstring];
+
+// is object a function?
+if (typeof fn === "function") fn();
+
+https://www.sitepoint.com/call-javascript-function-string-without-using-eval/
+
+// function name and parameters to pass
+var fnstring = "runMe";
+var fnparams = [1, 2, 3];
+
+// find object
+var fn = window[fnstring];
+
+// is object a function?
+if (typeof fn === "function") fn.apply(null, fnparams);
+
+--}}
