@@ -1,6 +1,11 @@
 <div>
+    <h1>{{ class_basename($model_class) }}</h1>
+    <x-input.group type="text" name="tag_type" label="Type Tag" />
+    <x-input.group type="text" name="tag_name" label="Nome Tag" />
+    <button type="button" class="btn btn-primary" wire:click="addTagType()">+</button>
 
     @foreach($group_tags as $group => $tags)
+        <hr/>
         <h3>{{ $group }}</h3>
             <div class="input-group mb-3">
             <x-input type="text" name="tag.{{$group}}" />
@@ -34,14 +39,22 @@
             title: event.detail.message,
             text: event.detail.text,
             icon: event.detail.type,
-            buttons: true,
-            dangerMode: true,
-        })
-        .then((willDelete) => {
-            if (willDelete) {
-                window.livewire.emit('remove');
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            //confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            var $callback=event.detail.callback;
+            if (result.isConfirmed) {
+                @this[$callback]();
+
+                Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
             }
-        });
+        })
 });
 </script>
 @endpush

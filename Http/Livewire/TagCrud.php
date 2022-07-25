@@ -11,6 +11,8 @@ class TagCrud extends Component {
     public string $model_class;
 
     public array $form_data=[];
+
+    public int $tag_id;
     /**
      * Undocumented function
      *
@@ -64,12 +66,26 @@ class TagCrud extends Component {
         
     }
 
+    public function addTagType():void {
+        $name= $this->form_data['tag_name'];
+        $type= $this->form_data['tag_type']; 
+        $this->form_data=[];
+        (new $this->model_class(['id'=>0]))->attachTag($name,$type);
+    }
+
     public function delete(int $tag_id):void {
+        $this->tag_id=$tag_id;
         $this->dispatchBrowserEvent('swal:confirm', [
             'type' => 'warning',
             'message' => 'Are you sure?',
-            'text' => 'If deleted, you will not be able to recover this imaginary file!'
+            'text' => 'If deleted, you will not be able to recover this imaginary file!',
+            'callback'=>'doDelete',
         ]);
+    }
+
+    public function doDelete(){
+        $tag=$this->getTagById($this->tag_id);
+        (new $this->model_class(['id'=>0]))->detachTag($tag->name,$tag->type);
     }
 
 }
