@@ -12,11 +12,11 @@ use Illuminate\Support\Arr;
  * @property int $tag_id
  * @property string $taggable_type
  * @property int $taggable_id
- * @property array $custom_properties
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $created_by
  * @property string|null $updated_by
+ * @property array $custom_properties
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable query()
