@@ -67,7 +67,8 @@ class Tag extends BaseTag {
         'name', 
         'slug', 
         'type', 
-        'order_column'
+        'order_column',
+        'color',
     ];
 
     /**
@@ -113,6 +114,27 @@ class Tag extends BaseTag {
         $customProperties = $this->pivot->custom_properties;
 
         return Arr::get($customProperties, $propertyName, $default);
+    }
+
+
+    public function getColorAttribute(?string $value){
+        if($value!=null){
+            return $value;
+        }
+        $value = \Faker\Factory::create()->hexColor();
+        try{
+            $this->update(['color'=>$value]);
+        }catch(Exception $e){
+            /*
+            dddx([
+                'message'=>'preso',
+                'id'=>$this->getKey(),
+                'attributes'=>$this->getAttributes(),
+                'attributes1'=>$this->attributes,
+            ]);
+            */
+        }
+        return $value;
     }
     
 }
