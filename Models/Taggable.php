@@ -51,6 +51,10 @@ class Taggable extends BaseMorphPivot {
         'custom_properties',
     ];
 
+    protected $attributes =[
+        'custom_properties'=>[],
+    ];
+
     /**
      * Undocumented variable.
      *
