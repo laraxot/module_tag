@@ -17,7 +17,6 @@ use Illuminate\Support\Arr;
  * @property string|null $created_by
  * @property string|null $updated_by
  * @property array $custom_properties
- * @property array $customProperties
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable query()
