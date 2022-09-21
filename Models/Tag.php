@@ -54,7 +54,9 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @method static Builder|Tag withType(?string $type = null)
  * @mixin \Eloquent
  */
+<<<<<<< HEAD
 class Tag extends BaseTag {
+<<<<<<< HEAD
 
     /**
      * Undocumented variable
@@ -79,6 +81,51 @@ class Tag extends BaseTag {
         'order_column',
         'color',
     ];
+=======
+    protected $fillable = ['id', 'tag_type', 'tag_cat_id', 'created_at', 'updated_at', 'old_id', 'pos', 'tag_cat_id_up', 'created_by', 'updated_by', 'parent_id', 'name', 'slug', 'type', 'order_column'];
+=======
+<<<<<<< HEAD
+=======
+
+ 
+>>>>>>> d9d576114de83fa27efb9efe0701ec3d4403c737
+class Tag extends BaseModelLang {
+    protected $fillable = ['id', 'parent_id', 'tag_type', 'tag_cat_id', 'old_id', 'pos'];
+
+    //protected $guard = ['id'];
+
+    public function treeLabel(): string {
+        return (string) optional($this->post)->title;
+    }
+
+    public function tagCat(): BelongsTo {
+        return $this->belongsTo(TagCat::class);
+    }
+
+    public function parent(): HasOne {
+        return $this->hasOne(Tag::class, 'parent_id', 'id');
+    }
+
+    //questa funzione non dovrebbe essere qui, perchè non è generico
+    public function products(): MorphToMany {
+        $pivot = app(TagMorph::class);
+        $pivot_fields = $pivot->getFillable();
+        $pivot_table = $pivot->getTable();
+        //---------------------------------------------------------------------------------------------------------------------------------------
+        //Class Modules\Shop\Models\Product was not found while trying to analyse it - discovering symbols is probably not configured properly.
+        // 💡 Learn more at https://phpstan.org/user-guide/discovering-symbols
+        $product = TenantService::model('product');
+        $product_class = get_class($product);
+
+        return $this->morphedByMany($product_class, 'post', $pivot_table)
+            ->using(get_class($pivot))
+            ->withPivot($pivot_fields)
+            ->withTimestamps()
+            ->with(['post']) //Eager;
+            ;
+    }
+>>>>>>> e6b5e36 (.)
+>>>>>>> 53d164a (up)
 
     /**
      * Undocumented variable.
