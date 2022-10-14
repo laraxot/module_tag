@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -13,7 +12,6 @@ use Modules\Xot\Traits\Updater;
  */
 abstract class BaseMorphPivot extends MorphPivot {
     use Updater;
-<<<<<<< HEAD
     /**
      * Indicates whether attributes are snake cased on arrays.
      *
@@ -24,8 +22,6 @@ abstract class BaseMorphPivot extends MorphPivot {
     public static $snakeAttributes = true;
 
     protected $perPage = 30;
-=======
->>>>>>> 4fabb56 (first)
 
     protected $connection = 'tag'; // this will use the specified database connection
 
@@ -45,11 +41,7 @@ abstract class BaseMorphPivot extends MorphPivot {
      * @var bool
      */
     public $timestamps = true;
-<<<<<<< HEAD
     // protected $attributes = ['related_type' => 'cuisine_cat'];
-=======
-    //protected $attributes = ['related_type' => 'cuisine_cat'];
->>>>>>> 4fabb56 (first)
     /**
      * @var string[]
      */
@@ -69,74 +61,4 @@ abstract class BaseMorphPivot extends MorphPivot {
         'user_id',
         'note',
     ];
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 4fabb56 (first)
-=======
-<?php
-
-declare(strict_types=1);
-
-namespace Modules\Tag\Models;
-
-use Illuminate\Database\Eloquent\Relations\MorphPivot;
-use Modules\Xot\Traits\Updater;
-
-/**
- * Class BaseMorphPivot.
- */
-abstract class BaseMorphPivot extends MorphPivot {
-    use Updater;
-    /**
-     * Indicates whether attributes are snake cased on arrays.
-     *
-     * @see  https://laravel-news.com/6-eloquent-secrets
-     *
-     * @var bool
-     */
-    public static $snakeAttributes = true;
-
-    protected $perPage = 30;
-
-    protected $connection = 'tag'; // this will use the specified database connection
-
-    /**
-     * @var array
-     */
-    protected $appends = [];
-    /**
-     * @var string
-     */
-    protected $primaryKey = 'id';
-    /**
-     * @var bool
-     */
-    public $incrementing = true;
-    /**
-     * @var bool
-     */
-    public $timestamps = true;
-    // protected $attributes = ['related_type' => 'cuisine_cat'];
-    /**
-     * @var string[]
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
-        // 'published_at',
-    ];
-    /**
-     * @var string[]
-     */
-    protected $fillable = [
-        'id',
-        'post_id', 'post_type',
-        'related_type',
-        'user_id',
-        'note',
-    ];
-}
->>>>>>> 9bd68a9 (.)

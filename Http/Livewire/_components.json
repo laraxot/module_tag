@@ -1,9 +1,1 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 [{"class_name":"TagCrud","comp_name":"tag-crud","comp_ns":"Modules\\Tag\\Http\\Livewire\\TagCrud"}]
-=======
-[]
->>>>>>> 4fabb56 (first)
-=======
-[{"class_name":"TagCrud","comp_name":"tag-crud","comp_ns":"Modules\\Tag\\Http\\Livewire\\TagCrud"}]
->>>>>>> 9bd68a9 (.)
