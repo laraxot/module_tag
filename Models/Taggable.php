@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
+<<<<<<< HEAD
 use Illuminate\Support\Arr;
 
 /**
@@ -105,3 +106,13 @@ class Taggable extends BaseMorphPivot {
         return $this;
     }
 }
+=======
+
+/**
+ * @mixin IdeHelperTaggable
+ */
+class Taggable extends BaseMorphPivot {
+
+    protected $table='taggables';  //spatie vuol cosi'
+}
+>>>>>>> 4fabb56 (first)

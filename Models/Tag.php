@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models;
 
+<<<<<<< HEAD
 use Exception;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Arr;
@@ -173,4 +174,10 @@ class Tag extends BaseTag {
 
         return $value;
     }
+=======
+use Spatie\Tags\Tag as BaseTag;
+
+class Tag extends BaseTag {
+    protected $connection = 'tag'; // this will use the specified database connection
+>>>>>>> 4fabb56 (first)
 }

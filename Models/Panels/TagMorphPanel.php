@@ -4,18 +4,29 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Models\Panels;
 
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Modules\Tag\Models\TagMorph;
 // --- Services --
 
 use Modules\Xot\Contracts\RowsContract;
+=======
+use Illuminate\Contracts\Support\Renderable;
+use Illuminate\Http\Request;
+//--- Services --
+
+>>>>>>> 4fabb56 (first)
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class TagMorphPanel extends XotBasePanel {
     /**
      * The model the resource corresponds to.
      */
+<<<<<<< HEAD
     public static string $model = 'TagMorph';
+=======
+    public static string $model = 'Modules\Tag\Models\TagMorph';
+>>>>>>> 4fabb56 (first)
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -41,6 +52,7 @@ class TagMorphPanel extends XotBasePanel {
         return [];
     }
 
+<<<<<<< HEAD
     /*
      * on select the option id.
      *
@@ -68,10 +80,31 @@ class TagMorphPanel extends XotBasePanel {
      * index navigation.
      */
     public function indexNav(): ?\Illuminate\Contracts\Support\Renderable {
+=======
+    /**
+     * on select the option id.
+     */
+    public function optionId(object $row) {
+        return $row->id;
+    }
+
+    /**
+     * on select the option label.
+     */
+    public function optionLabel(object $row): string {
+        return $row->title;
+    }
+
+    /**
+     * @return null
+     */
+    public function indexNav(): ?Renderable {
+>>>>>>> 4fabb56 (first)
         return null;
     }
 
     /**
+<<<<<<< HEAD
      * Build an "index" query for the given resource.
      *
      * @param RowsContract $query
@@ -84,16 +117,23 @@ class TagMorphPanel extends XotBasePanel {
     }
 
     /**
+=======
+>>>>>>> 4fabb56 (first)
      * Get the fields displayed by the resource.
         'value'=>'..',
      */
     public function fields(): array {
         return [
+<<<<<<< HEAD
             0 => (object) [
+=======
+            (object) [
+>>>>>>> 4fabb56 (first)
                 'type' => 'Id',
                 'name' => 'id',
                 'comment' => null,
             ],
+<<<<<<< HEAD
             1 => (object) [
                 'type' => 'Integer',
                 'name' => 'tag_id',
@@ -101,10 +141,19 @@ class TagMorphPanel extends XotBasePanel {
                 'comment' => null,
             ],
             2 => (object) [
+=======
+            (object) [
+                'type' => 'Integer',
+                'name' => 'post_id',
+                'comment' => null,
+            ],
+            (object) [
+>>>>>>> 4fabb56 (first)
                 'type' => 'String',
                 'name' => 'post_type',
                 'comment' => null,
             ],
+<<<<<<< HEAD
             3 => (object) [
                 'type' => 'Bigint',
                 'name' => 'post_id',
@@ -131,11 +180,18 @@ class TagMorphPanel extends XotBasePanel {
                 'comment' => null,
             ],
             8 => (object) [
+=======
+            (object) [
+>>>>>>> 4fabb56 (first)
                 'type' => 'Integer',
                 'name' => 'user_id',
                 'comment' => null,
             ],
+<<<<<<< HEAD
             9 => (object) [
+=======
+            (object) [
+>>>>>>> 4fabb56 (first)
                 'type' => 'Text',
                 'name' => 'note',
                 'comment' => null,
@@ -161,8 +217,11 @@ class TagMorphPanel extends XotBasePanel {
 
     /**
      * Get the filters available for the resource.
+<<<<<<< HEAD
      *
      * @param \Illuminate\Http\Request $request
+=======
+>>>>>>> 4fabb56 (first)
      */
     public function filters(Request $request = null): array {
         return [];

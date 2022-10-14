@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
@@ -10,12 +11,23 @@ use Modules\Xot\Database\Migrations\XotBaseMigration;
  */
 class CreateTagTables extends XotBaseMigration {
     /**
+=======
+use Illuminate\Database\Schema\Blueprint;
+use Modules\Xot\Database\Migrations\XotBaseMigration;
+
+class CreateTagTables extends XotBaseMigration{
+     /**
+>>>>>>> 4fabb56 (first)
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
+<<<<<<< HEAD
         // -- CREATE --
+=======
+        //-- CREATE --
+>>>>>>> 4fabb56 (first)
         $this->tableCreate(
             function (Blueprint $table) {
                 $table->id();
@@ -26,7 +38,11 @@ class CreateTagTables extends XotBaseMigration {
                 $table->timestamps();
             }
         );
+<<<<<<< HEAD
         // -- UPDATE --
+=======
+        //-- UPDATE --
+>>>>>>> 4fabb56 (first)
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('name')) {
