@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 declare(strict_types=1);
@@ -20,3 +21,23 @@ class Item extends Component {
         return '';
     }
 }
+=======
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Tag\View\Components\Dashboard;
+
+use Illuminate\View\Component;
+
+// use Modules\Xot\View\Components\XotBaseComponent;
+
+/**
+ * Class Field.
+ */
+class Item extends Component {
+    public function render() {
+        return '';
+    }
+}
+>>>>>>> 9bd68a9 (.)

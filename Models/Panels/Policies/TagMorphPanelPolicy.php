@@ -1,10 +1,10 @@
-<?php
-
-declare(strict_types=1);
-
-namespace Modules\Tag\Models\Panels\Policies;
-
-use Modules\Xot\Models\Panels\Policies\XotBasePanelPolicy;
-
-class TagMorphPanelPolicy extends XotBasePanelPolicy {
-}
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Tag\Models\Panels\Policies;
+
+use Modules\Xot\Models\Panels\Policies\XotBasePanelPolicy;
+
+class TagMorphPanelPolicy extends XotBasePanelPolicy {
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 <<<<<<< HEAD
 
@@ -17,3 +18,15 @@ use Modules\Xot\Models\Panels\Policies\XotBasePanelPolicy;
 
 class CategoryPanelPolicy extends XotBasePanelPolicy {
 }
+=======
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Tag\Models\Panels\Policies;
+
+use Modules\Xot\Models\Panels\Policies\XotBasePanelPolicy;
+
+class CategoryPanelPolicy extends XotBasePanelPolicy {
+}
+>>>>>>> 9bd68a9 (.)
