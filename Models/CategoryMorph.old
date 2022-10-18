@@ -17,15 +17,7 @@ class CategoryMorph extends BaseMorphPivot {
     /*
      * Attributes that should be mass-assignable.
      *
-<<<<<<< HEAD
-<<<<<<< HEAD
      * @var array<string>
-=======
-     * @var array
->>>>>>> 4fabb56 (first)
-=======
-     * @var array<string>
->>>>>>> 9bd68a9 (.)
      */
     protected $fillable = ['id', 'category_id', 'post_type', 'post_id', 'created_by', 'updated_by', 'user_id', 'note'];
 }
