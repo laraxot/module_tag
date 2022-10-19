@@ -45,3 +45,4 @@ Homestead.json
 *.stackdump
 *.cache
 
+/build
