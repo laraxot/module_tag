@@ -112,7 +112,7 @@ class TagPanel extends XotBasePanel {
             ],
 
             (object) [
-                'type' => 'Image',
+                'type' => 'UploadImage',
                 'name' => 'post.image_src',
                 'comment' => null,
                 'col_size' => 2,
