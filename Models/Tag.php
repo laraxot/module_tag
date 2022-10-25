@@ -15,27 +15,26 @@ use Spatie\Tags\Tag as BaseTag;
 /**
  * Modules\Tag\Models\Tag.
  *
- * @property int                             $id
- * @property string                          $tag_type
- * @property int                             $tag_cat_id
+ * @property int $id
+ * @property string $tag_type
+ * @property int $tag_cat_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property int                             $old_id
- * @property int                             $pos
- * @property int                             $tag_cat_id_up
- * @property string|null                     $created_by
- * @property string|null                     $updated_by
- * @property int                             $parent_id
- * @property array                           $name
- * @property array                           $slug
- * @property string|null                     $type
- * @property int|null                        $order_column
- * @property mixed                           $color
- *
- * @method static Builder|Tag                               containing(string $name, $locale = null)
+ * @property int $old_id
+ * @property int $pos
+ * @property int $tag_cat_id_up
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property int $parent_id
+ * @property array $name
+ * @property array $slug
+ * @property string|null $type
+ * @property int|null $order_column
+ * @property-read mixed $color
+ * @method static Builder|Tag containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
- * @method static Builder|Tag                               ordered(string $direction = 'asc')
+ * @method static Builder|Tag ordered(string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|Tag query()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedBy($value)
@@ -52,8 +51,7 @@ use Spatie\Tags\Tag as BaseTag;
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedBy($value)
- * @method static Builder|Tag                               withType(?string $type = null)
- *
+ * @method static Builder|Tag withType(?string $type = null)
  * @mixin \Eloquent
  */
 class Tag extends BaseTag {
