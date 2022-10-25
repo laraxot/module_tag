@@ -10,18 +10,17 @@ class CreateTagCatsTable extends XotBaseMigration {
      * Run the migrations.
      */
     public function up(): void {
-        //-- CREATE --
+        // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                    $table->increments('id');
-                    $table->text('tag_cat_type');
-                    $table->integer('type_input');
-                    $table->timestamps();
-                }
-            );
+                $table->increments('id');
+                $table->text('tag_cat_type');
+                $table->integer('type_input');
+                $table->timestamps();
+            }
+        );
 
-
-        //-- UPDATE --
+        // -- UPDATE --
         $this->tableUpdate(
             function (Blueprint $table) {
                 if (! $this->hasColumn('created_by')) {

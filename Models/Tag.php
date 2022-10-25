@@ -90,7 +90,7 @@ class Tag extends BaseTag {
     }
 
     public function parent(): HasOne {
-        return $this->hasOne(Tag::class, 'parent_id', 'id');
+        return $this->hasOne(self::class, 'parent_id', 'id');
     }
 
     // questa funzione non dovrebbe essere qui, perchè non è generico
@@ -102,10 +102,10 @@ class Tag extends BaseTag {
         // Class Modules\Shop\Models\Product was not found while trying to analyse it - discovering symbols is probably not configured properly.
         // 💡 Learn more at https://phpstan.org/user-guide/discovering-symbols
         $product = TenantService::model('product');
-        $product_class = get_class($product);
+        $product_class = \get_class($product);
 
         return $this->morphedByMany($product_class, 'post', $pivot_table)
-            ->using(get_class($pivot))
+            ->using(\get_class($pivot))
             ->withPivot($pivot_fields)
             ->withTimestamps()
             ->with(['post']) // Eager;
@@ -154,7 +154,7 @@ class Tag extends BaseTag {
     }
 
     public function getColorAttribute(?string $value) {
-        if (null != $value) {
+        if (null !== $value) {
             return $value;
         }
         $value = \Faker\Factory::create()->hexColor();

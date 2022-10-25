@@ -41,7 +41,7 @@ class TagMorphPanel extends XotBasePanel {
         return [];
     }
 
-    /*
+    /**
      * on select the option id.
      *
      * quando aggiungi un campo select, è il numero della chiave
@@ -50,11 +50,10 @@ class TagMorphPanel extends XotBasePanel {
      * @param TagMorph $row
      *
      * @return int|string|null
-
     public function optionId($row) {
         return $row->getKey();
     }
-    */
+     */
 
     /*
      * on select the option label.

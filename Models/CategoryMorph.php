@@ -10,11 +10,12 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph query()
+ *
  * @mixin \Eloquent
  * @mixin IdeHelperCategoryMorph
  */
 class CategoryMorph extends BaseMorphPivot {
-    /*
+    /**
      * Attributes that should be mass-assignable.
      *
      * @var array
