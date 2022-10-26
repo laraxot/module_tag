@@ -65,7 +65,7 @@ class TagPanel extends XotBasePanel {
             ],
 
             (object) [
-                'type' => 'Json',
+                'type' => 'String',
                 'name' => 'name',
                 'rules' => 'required',
                 'comment' => null,
