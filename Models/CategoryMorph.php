@@ -21,19 +21,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph query()
-<<<<<<< HEAD
-=======
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCategoryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereNote($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph wherePostId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph wherePostType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUserId($value)
->>>>>>> 8987e87c3ab16d0d1b2c984ff96359c1ab808fc5
  *
  * @mixin \Eloquent
  */

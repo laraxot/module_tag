@@ -35,18 +35,6 @@ namespace Modules\Tag\Models;
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat        newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat        query()
-<<<<<<< HEAD
-=======
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereCreatedBy($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereOldId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        wherePos($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereTagCatType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereTypeInput($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat        whereUpdatedBy($value)
->>>>>>> 8987e87c3ab16d0d1b2c984ff96359c1ab808fc5
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
  *
  * @mixin \Eloquent
