@@ -1,21 +1,22 @@
 <?php
 
+declare(strict_types=1);
 
 use Illuminate\Database\Schema\Blueprint;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateTaggablesTables extends XotBaseMigration{
-     /**
+class CreateTaggablesTables extends XotBaseMigration {
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up() {
-        //-- CREATE --
+        // -- CREATE --
         $this->tableCreate(
             function (Blueprint $table) {
-                //SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint (SQL: alter table `taggable` add constraint `taggable_tag_id_foreign` foreign key (`tag_id`) references `tags` (`id`) on delete cascade)
-                $table->foreignId('tag_id');//->constrained()->cascadeOnDelete();
+                // SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint (SQL: alter table `taggable` add constraint `taggable_tag_id_foreign` foreign key (`tag_id`) references `tags` (`id`) on delete cascade)
+                $table->foreignId('tag_id'); // ->constrained()->cascadeOnDelete();
                 $table->morphs('taggable');
                 $table->unique(['tag_id', 'taggable_id', 'taggable_type']);
             }

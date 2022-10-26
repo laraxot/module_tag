@@ -21,11 +21,13 @@ namespace Modules\Tag\Models;
  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat newQuery()
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat        newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat        newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
- * @method static \Illuminate\Database\Eloquent\Builder|TagCat query()
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat        query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
+ *
  * @mixin \Eloquent
  * @mixin IdeHelperTagCat
  */
