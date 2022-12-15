@@ -46,3 +46,4 @@ Homestead.json
 *.cache
 
 /build
+vendor
