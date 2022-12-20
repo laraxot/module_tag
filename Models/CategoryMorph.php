@@ -17,12 +17,20 @@ namespace Modules\Tag\Models;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null                     $created_by
  * @property string|null                     $updated_by
- *
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph query()
- *
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereNote($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph wherePostId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph wherePostType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUpdatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategoryMorph whereUserId($value)
  */
 class CategoryMorph extends BaseMorphPivot {
     /**

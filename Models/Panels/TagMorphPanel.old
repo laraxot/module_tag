@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Modules\Tag\Models\TagMorph;
 // --- Services --
 
-use Modules\Xot\Models\Panels\XotBasePanel;
+use Modules\Cms\Models\Panels\XotBasePanel;
 
 class TagMorphPanel extends XotBasePanel {
     /**

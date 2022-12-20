@@ -31,7 +31,6 @@ use Spatie\Tags\Tag as BaseTag;
  * @property string|null                     $type
  * @property int|null                        $order_column
  * @property mixed                           $color
- *
  * @method static Builder|Tag                               containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
@@ -53,8 +52,8 @@ use Spatie\Tags\Tag as BaseTag;
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedBy($value)
  * @method static Builder|Tag                               withType(?string $type = null)
- *
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|Tag whereColor($value)
  */
 class Tag extends BaseTag {
     /**

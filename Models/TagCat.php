@@ -30,14 +30,21 @@ namespace Modules\Tag\Models;
  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Lang\Models\Post[] $posts
  * @property int|null                                                             $posts_count
  * @property mixed                                                                $url
- *
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat        newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat        newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang ofItem(string $guid)
  * @method static \Illuminate\Database\Eloquent\Builder|TagCat        query()
  * @method static \Illuminate\Database\Eloquent\Builder|BaseModelLang withPost(string $guid)
- *
  * @mixin \Eloquent
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereCreatedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereOldId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat wherePos($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereTagCatType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereTypeInput($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TagCat whereUpdatedBy($value)
  */
 class TagCat extends BaseModelLang {
     protected $fillable = ['id', 'tag_cat_type', 'type_input', 'pos', 'old_id'];
