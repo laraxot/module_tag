@@ -8,9 +8,12 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 use Exception;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Arr;
 use Spatie\Tags\Tag as BaseTag;
+use Modules\Tenant\Services\TenantService;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 /**
  * Modules\Tag\Models\Tag.
@@ -80,9 +83,11 @@ class Tag extends BaseTag {
         'color',
     ];
 
+    /*
     public function treeLabel(): string {
         return (string) optional($this->post)->title;
     }
+    */
 
     public function tagCat(): BelongsTo {
         return $this->belongsTo(TagCat::class);

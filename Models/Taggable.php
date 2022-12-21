@@ -64,7 +64,8 @@ class Taggable extends BaseMorphPivot {
     ];
 
     public function withCustomProperties(array $customProperties): self {
-        $this->customProperties = $customProperties;
+        //$this->customProperties = $customProperties;
+        $this->custom_properties= $customProperties;
 
         return $this;
     }
