@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace Modules\Tag\Models\Panels;
 
 use Illuminate\Http\Request;
-use Modules\Tag\Models\Tag;
+use Modules\Cms\Models\Panels\XotBasePanel;
 // --- Services --
 
+use Modules\Tag\Models\Tag;
 use Modules\Xot\Contracts\RowsContract;
-use Modules\Cms\Models\Panels\XotBasePanel;
 
 class TagPanel extends XotBasePanel {
     /**

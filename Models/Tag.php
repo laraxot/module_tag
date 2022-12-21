@@ -8,12 +8,12 @@ declare(strict_types=1);
 namespace Modules\Tag\Models;
 
 use Exception;
-use Illuminate\Support\Arr;
-use Spatie\Tags\Tag as BaseTag;
-use Modules\Tenant\Services\TenantService;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Arr;
+use Modules\Tenant\Services\TenantService;
+use Spatie\Tags\Tag as BaseTag;
 
 /**
  * Modules\Tag\Models\Tag.
@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property string|null                     $type
  * @property int|null                        $order_column
  * @property mixed                           $color
+ *
  * @method static Builder|Tag                               containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
@@ -55,7 +56,9 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereUpdatedBy($value)
  * @method static Builder|Tag                               withType(?string $type = null)
+ *
  * @mixin \Eloquent
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereColor($value)
  */
 class Tag extends BaseTag {
