@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
-use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
+use Modules\Tag\Models\Tag;
+use Illuminate\Contracts\Support\Renderable;
 
 class TagCrud extends Component {
     public string $model_class;
@@ -38,7 +39,7 @@ class TagCrud extends Component {
         return view($view, $view_params);
     }
 
-    public function getTagById(int $tag_id) {
+    public function getTagById(int $tag_id):Tag {
         $tag = (new $this->model_class(['id' => 0]))
             ->tags
             ->firstWhere('id', $tag_id);

@@ -161,7 +161,7 @@ class Tag extends BaseTag {
         return Arr::get($customProperties, $propertyName, $default);
     }
 
-    public function getColorAttribute(?string $value) {
+    public function getColorAttribute(?string $value):?string {
         if (null !== $value) {
             return $value;
         }
