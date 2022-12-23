@@ -29,6 +29,7 @@ class TagCrud extends Component {
      */
     public function render(): Renderable {
         $group_tags = (new $this->model_class(['id' => 0]))->tags->groupBy('type');
+        //$group_tags = app($this->model_class)->(['id' => 0]))->tags->groupBy('type');
 
         $view = 'tag::livewire.tag-crud';
         $view_params = [
