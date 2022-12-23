@@ -80,7 +80,7 @@ class TagCrud extends Component {
         ]);
     }
 
-    public function doDelete() {
+    public function doDelete():void {
         $tag = $this->getTagById($this->tag_id);
         (new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
     }
