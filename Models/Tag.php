@@ -65,7 +65,7 @@ class Tag extends BaseTag {
     /**
      * Undocumented variable.
      *
-     * @var array
+     * @var array<string> 
      */
     protected $fillable = [
         'id',
