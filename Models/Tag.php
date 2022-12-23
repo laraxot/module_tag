@@ -91,10 +91,11 @@ class Tag extends BaseTag {
         return (string) optional($this->post)->title;
     }
     */
-
+    /*
     public function tagCat(): BelongsTo {
         return $this->belongsTo(TagCat::class);
     }
+    */
 
     public function parent(): HasOne {
         return $this->hasOne(self::class, 'parent_id', 'id');
