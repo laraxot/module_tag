@@ -30,7 +30,11 @@ class TagPanel extends XotBasePanel {
      */
     public function optionLabel($row): string {
         // return (string) implode('-', $row->name); //spatie
-        return (string) $row->name;
+        $name= $row->name;
+        if(is_array($name)){
+            $name=implode('-',$name);
+        }
+        return $name;
     }
 
     /**
