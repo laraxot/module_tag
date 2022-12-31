@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
+use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
 use Modules\Tag\Models\Tag;
-use Illuminate\Contracts\Support\Renderable;
 
 class TagCrud extends Component {
     public string $model_class;
@@ -29,7 +29,7 @@ class TagCrud extends Component {
      */
     public function render(): Renderable {
         /** @var Tag $tag */
-        $tag=(new $this->model_class(['id' => 0]));
+        $tag = (new $this->model_class(['id' => 0]));
         $group_tags = $tag->tags->groupBy('type');
         $view = 'tag::livewire.tag-crud';
         $view_params = [
@@ -40,7 +40,7 @@ class TagCrud extends Component {
         return view($view, $view_params);
     }
 
-    public function getTagById(int $tag_id):Tag {
+    public function getTagById(int $tag_id): Tag {
         $tag = (new $this->model_class(['id' => 0]))
             ->tags
             ->firstWhere('id', $tag_id);
@@ -81,7 +81,7 @@ class TagCrud extends Component {
         ]);
     }
 
-    public function doDelete():void {
+    public function doDelete(): void {
         $tag = $this->getTagById($this->tag_id);
         (new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
     }
