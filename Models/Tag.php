@@ -34,6 +34,7 @@ use Spatie\Tags\Tag as BaseTag;
  * @property string|null                     $type
  * @property int|null                        $order_column
  * @property mixed                           $color
+ * @property \Illuminate\Support\Collection  $tags
  *
  * @method static Builder|Tag                               containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
