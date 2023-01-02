@@ -109,6 +109,10 @@ class TagCrud extends Component {
     public function doDelete(): void {
         $tag = $this->getTagById($this->tag_id);
         //(new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
-        $this->model->detachTag($tag->name, $tag->type);
+        $name=$tag->name;
+        if (is_array($name)) {
+            $name = implode('',$name);
+        }
+        $this->model->detachTag($name, $tag->type);
     }
 }
