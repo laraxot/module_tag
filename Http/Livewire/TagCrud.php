@@ -4,16 +4,31 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
-use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
+use Spatie\Tags\HasTags;
 use Modules\Tag\Models\Tag;
+use Modules\Xot\Contracts\HasTagsContract;
+use Illuminate\Contracts\Support\Renderable;
+/**
+ * Summary of TagCrud
 
+ * Undocumented class
+ *
+ * @property HasTagsContract $model;
+ */
 class TagCrud extends Component {
     public string $model_class;
 
     public array $form_data = [];
 
     public int $tag_id;
+
+    public function getModelProperty():HasTagsContract
+    {
+         //$model = (new $this->model_class(['id' => 0]));
+         $model=app($this->model_class,['id' => 0]);
+        return $model;
+    }
 
     /**
      * Undocumented function.
@@ -28,9 +43,10 @@ class TagCrud extends Component {
      * Undocumented function.
      */
     public function render(): Renderable {
-        /** @var Tag $tag */
-        $tag = (new $this->model_class(['id' => 0]));
-        $group_tags = $tag->tags->groupBy('type');
+
+        //$model = (new $this->model_class(['id' => 0]));
+        //$model=app($this->model_class,['id' => 0]);
+        $group_tags = $this->model->tags->groupBy('type');
         $view = 'tag::livewire.tag-crud';
         $view_params = [
             'view' => $view,
@@ -40,8 +56,10 @@ class TagCrud extends Component {
         return view($view, $view_params);
     }
 
-    public function getTagById(int $tag_id): Tag {
-        $tag = (new $this->model_class(['id' => 0]))
+    public function getTagById(int $tag_id): ?Tag {
+        //$model=(new $this->model_class(['id' => 0]));
+        //$model=app($this->model_class,['id' => 0]);
+        $tag = $this->model
             ->tags
             ->firstWhere('id', $tag_id);
 
@@ -51,7 +69,8 @@ class TagCrud extends Component {
     public function moveUp(int $tag_id): void {
         $tag = $this->getTagById($tag_id);
         $res = $tag->moveOrderUp();
-        (new $this->model_class(['id' => 0]))->refresh();
+        //(new $this->model_class(['id' => 0]))->refresh();
+        $this->model->refresh();
     }
 
     public function moveDown(int $tag_id): void {
