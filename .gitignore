@@ -39,3 +39,7 @@ Homestead.json
 *.cache
 /build
 vendor/
+*.old
+*.old1
+*.old2
+
