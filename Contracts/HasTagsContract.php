@@ -69,34 +69,14 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 interface HasTagsContract {
 
     public static function getTagClassName(): string;
-    public static function bootHasTags();
+
     public function tags(): MorphToMany;
 
     public function tagsTranslated(string|null $locale = null): MorphToMany;
 
-    public function setTagsAttribute(string | array | ArrayAccess | Tag $tags);
-
-    public function scopeWithAllTags(
-        Builder $query,
-        string | array | ArrayAccess | Tag $tags,
-        string $type = null,
-    ): Builder;
 
 
-    public function scopeWithAnyTags(
-        Builder $query,
-        string | array | ArrayAccess | Tag $tags,
-        string $type = null,
-    ): Builder ;
+    public function attachTag(string|Tag $tag, string|null $type = null) : static;
 
-    public function scopeWithoutTags(
-        Builder $query,
-        string | array | ArrayAccess | Tag $tags,
-        string $type = null
-    ): Builder;
-
-
-    public function scopeWithAllTagsOfAnyType(Builder $query, $tags): Builder;
-
-    public function scopeWithAnyTagsOfAnyType(Builder $query, $tags): Builder;
+    public function detachTag(string|Tag $tag, string|null $type = null): static;
 }

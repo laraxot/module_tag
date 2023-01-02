@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
+use Exception;
 use Livewire\Component;
 use Spatie\Tags\HasTags;
 use Modules\Tag\Models\Tag;
@@ -56,12 +57,15 @@ class TagCrud extends Component {
         return view($view, $view_params);
     }
 
-    public function getTagById(int $tag_id): ?Tag {
+    public function getTagById(int $tag_id): Tag {
         //$model=(new $this->model_class(['id' => 0]));
         //$model=app($this->model_class,['id' => 0]);
         $tag = $this->model
             ->tags
             ->firstWhere('id', $tag_id);
+        if($tag==null){
+            throw new Exception('['.__LINE__.']['.__FILE__.']');
+        }
 
         return $tag;
     }
@@ -70,7 +74,7 @@ class TagCrud extends Component {
         $tag = $this->getTagById($tag_id);
         $res = $tag->moveOrderUp();
         //(new $this->model_class(['id' => 0]))->refresh();
-        $this->model->refresh();
+        //$this->model->refresh(); //---------------------------- !!!!
     }
 
     public function moveDown(int $tag_id): void {
@@ -80,14 +84,16 @@ class TagCrud extends Component {
 
     public function addTag(string $type): void {
         $name = $this->form_data['tag'][$type] ?? null;
-        (new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        //(new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        $this->model->attachTag($name, $type);
     }
 
     public function addTagType(): void {
         $name = $this->form_data['tag_name'];
         $type = $this->form_data['tag_type'];
         $this->form_data = [];
-        (new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        //(new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        $this->model->attachTag($name, $type);
     }
 
     public function delete(int $tag_id): void {
@@ -102,6 +108,7 @@ class TagCrud extends Component {
 
     public function doDelete(): void {
         $tag = $this->getTagById($this->tag_id);
-        (new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
+        //(new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
+        $this->model->detachTag($tag->name, $tag->type);
     }
 }
