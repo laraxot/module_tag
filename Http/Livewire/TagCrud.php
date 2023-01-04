@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace Modules\Tag\Http\Livewire;
 
 use Exception;
+use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
-use Spatie\Tags\HasTags;
 use Modules\Tag\Models\Tag;
 use Modules\Xot\Contracts\HasTagsContract;
-use Illuminate\Contracts\Support\Renderable;
+
 /**
  * Summary of TagCrud
 
- * Undocumented class
+ * Undocumented class.
  *
  * @property HasTagsContract $model;
  */
@@ -24,10 +24,10 @@ class TagCrud extends Component {
 
     public int $tag_id;
 
-    public function getModelProperty():HasTagsContract
-    {
-         //$model = (new $this->model_class(['id' => 0]));
-         $model=app($this->model_class,['id' => 0]);
+    public function getModelProperty(): HasTagsContract {
+        // $model = (new $this->model_class(['id' => 0]));
+        $model = app($this->model_class, ['id' => 0]);
+
         return $model;
     }
 
@@ -44,9 +44,8 @@ class TagCrud extends Component {
      * Undocumented function.
      */
     public function render(): Renderable {
-
-        //$model = (new $this->model_class(['id' => 0]));
-        //$model=app($this->model_class,['id' => 0]);
+        // $model = (new $this->model_class(['id' => 0]));
+        // $model=app($this->model_class,['id' => 0]);
         $group_tags = $this->model->tags->groupBy('type');
         $view = 'tag::livewire.tag-crud';
         $view_params = [
@@ -58,12 +57,12 @@ class TagCrud extends Component {
     }
 
     public function getTagById(int $tag_id): Tag {
-        //$model=(new $this->model_class(['id' => 0]));
-        //$model=app($this->model_class,['id' => 0]);
+        // $model=(new $this->model_class(['id' => 0]));
+        // $model=app($this->model_class,['id' => 0]);
         $tag = $this->model
             ->tags
             ->firstWhere('id', $tag_id);
-        if($tag==null){
+        if (null == $tag) {
             throw new Exception('['.__LINE__.']['.__FILE__.']');
         }
 
@@ -73,8 +72,8 @@ class TagCrud extends Component {
     public function moveUp(int $tag_id): void {
         $tag = $this->getTagById($tag_id);
         $res = $tag->moveOrderUp();
-        //(new $this->model_class(['id' => 0]))->refresh();
-        //$this->model->refresh(); //---------------------------- !!!!
+        // (new $this->model_class(['id' => 0]))->refresh();
+        // $this->model->refresh(); //---------------------------- !!!!
     }
 
     public function moveDown(int $tag_id): void {
@@ -84,7 +83,7 @@ class TagCrud extends Component {
 
     public function addTag(string $type): void {
         $name = $this->form_data['tag'][$type] ?? null;
-        //(new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        // (new $this->model_class(['id' => 0]))->attachTag($name, $type);
         $this->model->attachTag($name, $type);
     }
 
@@ -92,7 +91,7 @@ class TagCrud extends Component {
         $name = $this->form_data['tag_name'];
         $type = $this->form_data['tag_type'];
         $this->form_data = [];
-        //(new $this->model_class(['id' => 0]))->attachTag($name, $type);
+        // (new $this->model_class(['id' => 0]))->attachTag($name, $type);
         $this->model->attachTag($name, $type);
     }
 
@@ -108,10 +107,10 @@ class TagCrud extends Component {
 
     public function doDelete(): void {
         $tag = $this->getTagById($this->tag_id);
-        //(new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
-        $name=$tag->name;
+        // (new $this->model_class(['id' => 0]))->detachTag($tag->name, $tag->type);
+        $name = $tag->name;
         if (is_array($name)) {
-            $name = implode('',$name);
+            $name = implode('', $name);
         }
         $this->model->detachTag($name, $tag->type);
     }

@@ -4,18 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Contracts;
 
-use ArrayAccess;
-use Illuminate\Support\Arr;
-use Modules\Tag\Models\Tag;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Collection;
 use Modules\Mediamonitor\Models\Clip;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Modules\Tag\Models\Tag;
 
 /**
  * Modules\Xot\Contracts\ModelProfileContract.
@@ -62,21 +57,19 @@ use Illuminate\Database\Eloquent\Collection as EloquentCollection;
  * @method HasMany       presses()
  * @method BelongsToMany channels()
  * @method mixed         getAttributeValue(string $key)
-  * @property \Illuminate\Database\Eloquent\Collection|\Modules\Tag\Models\Tag[]       $tags
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|\Modules\Tag\Models\Tag[] $tags
  *
  * @mixin  \Eloquent
  */
 interface HasTagsContract {
-
     public static function getTagClassName(): string;
 
     public function tags(): MorphToMany;
 
     public function tagsTranslated(string|null $locale = null): MorphToMany;
 
-
-
-    public function attachTag(string|Tag $tag, string|null $type = null) : static;
+    public function attachTag(string|Tag $tag, string|null $type = null): static;
 
     public function detachTag(string|Tag $tag, string|null $type = null): static;
 }
