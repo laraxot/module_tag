@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
-use Exception;
 use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
+use Modules\Tag\Contracts\HasTagsContract;
 use Modules\Tag\Models\Tag;
-use Modules\Xot\Contracts\HasTagsContract;
 
 /**
  * Summary of TagCrud
@@ -63,7 +62,7 @@ class TagCrud extends Component {
             ->tags
             ->firstWhere('id', $tag_id);
         if (null == $tag) {
-            throw new Exception('['.__LINE__.']['.__FILE__.']');
+            throw new \Exception('['.__LINE__.']['.__FILE__.']');
         }
 
         return $tag;
