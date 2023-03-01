@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Tag\Http\Livewire;
 
-use Illuminate\Contracts\Support\Renderable;
 use Livewire\Component;
-use Modules\Tag\Contracts\HasTagsContract;
 use Modules\Tag\Models\Tag;
+use Modules\Cms\Actions\GetViewAction;
+use Modules\Tag\Contracts\HasTagsContract;
+use Illuminate\Contracts\Support\Renderable;
 
 /**
  * Summary of TagCrud
