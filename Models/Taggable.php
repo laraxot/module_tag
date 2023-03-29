@@ -9,30 +9,26 @@ use Illuminate\Support\Arr;
 /**
  * Modules\Tag\Models\Taggable.
  *
- * @property int    $tag_id
+ * @property int $tag_id
  * @property string $taggable_type
- * @property int    $taggable_id
- *
+ * @property int $taggable_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $created_by
+ * @property string|null $updated_by
+ * @property array $custom_properties
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable query()
- * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTagId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableType($value)
- *
- * @mixin \Eloquent
- *
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property string|null                     $created_by
- * @property string|null                     $updated_by
- * @property array                           $custom_properties
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereCustomProperties($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTagId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereTaggableType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Taggable whereUpdatedBy($value)
+ * @mixin \Eloquent
  */
 class Taggable extends BaseMorphPivot {
     /**
