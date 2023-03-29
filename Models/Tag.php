@@ -33,14 +33,13 @@ use Spatie\Tags\Tag as BaseTag;
  * @property array $slug
  * @property string|null $type
  * @property int|null $order_column
- * @property string|null $color
+ * @property-read string|null $color
  * @property-read Tag|null $parent
  * @method static Builder|Tag containing(string $name, $locale = null)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Tag newQuery()
  * @method static Builder|Tag ordered(string $direction = 'asc')
  * @method static \Illuminate\Database\Eloquent\Builder|Tag query()
- * @method static \Illuminate\Database\Eloquent\Builder|Tag whereColor($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereCreatedBy($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Tag whereId($value)
