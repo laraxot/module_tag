@@ -1,6 +1,7 @@
 *.jar
 *.log
 *.lock
+package-lock.json
 *.phar
 .git-rewrite
 .php-cs-fixer.cache
@@ -17,6 +18,10 @@ error_log
 /vendor/
 node_modules/
 npm-debug.log
+*.cache
+*.phar
+*.lock
+package-lock.json
 yarn-error.log
 # Laravel 4 specific
 bootstrap/compiled.php
@@ -35,6 +40,7 @@ Homestead.json
 .phpunit.result.cache
 .git-rewrite
 *.lock
+package-lock.json
 *.stackdump
 *.cache
 /build
