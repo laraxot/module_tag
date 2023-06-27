@@ -29,7 +29,7 @@ use Modules\Tag\Models\Tag;
  * @property string|null                     $title
  * @property PivotContract|null              $pivot
  * @property string                          $tennant_name
- * @property \Modules\LU\Models\User|null    $user
+ * @property \Modules\User\Models\User|null    $user
  * @property string                          $activity_report_interval
  * @property Collection<Clip>                $clips
  *
