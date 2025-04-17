@@ -1,0 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\Tag\Models\Policies;
+
+use Modules\Cms\Models\Panels\Policies\XotBasePanelPolicy;
+
+class TagPolicy extends XotBasePanelPolicy {
+}
